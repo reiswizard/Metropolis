@@ -12,7 +12,7 @@ public class Buerger extends Menschen {
 	public Buerger() {	}
 
 	public Buerger(String jobs) {
-		steuerpflichtig = true;
+		einkommensteuerpflichtig = true;
 		this.jobs = jobs;
 	}
 }

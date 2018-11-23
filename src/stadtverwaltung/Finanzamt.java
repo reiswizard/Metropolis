@@ -11,8 +11,10 @@ public class Finanzamt {
 
 
 
-	public double steuerErhebung(double Einkommen, boolean steuerpflichtig) {
-		if(steuerpflichtig) {
+	public double erhebeEinkommensteuer(double Einkommen, boolean einkommensteuerpflichtig) {
+		if(!einkommensteuerpflichtig) {
+			Einkommen = 0;
+		} else {
 			if(Einkommen<=20000) {
 				Einkommen = Einkommen*0.1;
 			}
@@ -25,8 +27,27 @@ public class Finanzamt {
 			if(Einkommen>200000) {
 				Einkommen = (Einkommen-120000)*0.5+33000;
 			}
-		} else {
+		}
+		return Einkommen;
+	}
+
+	public double erhebeGewerbesteuer(double Einkommen, boolean gewerbesteuerpflichtig, boolean einkommensteuerpflichtig) {
+		if(!gewerbesteuerpflichtig) {
 			Einkommen = 0;
+		} else {
+			Einkommen = Einkommen*0.1;
+			if (einkommensteuerpflichtig && Einkommen<=1000) {
+				Einkommen=-1000;
+			}
+		}
+		return Einkommen;
+	}
+
+	public double erhebeKoerperschaftsteuer(double Einkommen, boolean koerperschaftsteuer) {
+		if(!koerperschaftsteuer) {
+			Einkommen = 0;
+		} else {
+			Einkommen = Einkommen*0.25;
 		}
 		return Einkommen;
 	}

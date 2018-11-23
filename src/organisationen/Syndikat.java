@@ -17,6 +17,7 @@ public class Syndikat extends Organisation{
 	public Syndikat(Namen name, Schurken[] mitglieder) {
 		this.name = name;
 		this.mitglieder = mitglieder;
+		koerperschaftsteuer = true;
 	}
 
 }

@@ -14,7 +14,7 @@ public class Schurken extends Mutanten{
 
 	public Schurken(Namen name, int einkommen, String mutation, String superkraft) {
 		super(name, einkommen, mutation, superkraft);
-		steuerpflichtig = true;
+		einkommensteuerpflichtig = true;
 		// TODO Auto-generated constructor stub
 	}
 

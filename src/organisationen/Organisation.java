@@ -1,8 +1,6 @@
 package organisationen;
 
-public abstract class Organisation extends stadtverwaltung.Steuerpflichtigen {
+public abstract class Organisation extends stadtverwaltung.Steuerpflichtig {
 
-	public Organisation() {
-		steuerpflichtig = true;
-	}
+	public Organisation() {	}
 }

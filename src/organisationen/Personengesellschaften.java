@@ -11,8 +11,9 @@ import stadtverwaltung.Namen;
  */
 public class Personengesellschaften extends Unternehmen{
 
-	public Personengesellschaften(Namen name) {
-		super(name);
+	public Personengesellschaften(Namen name, double gewinn) {
+		super(name, gewinn);
+		einkommensteuerpflichtig = true;
 		// TODO Auto-generated constructor stub
 	}
 

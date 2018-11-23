@@ -9,7 +9,7 @@ import stadtverwaltung.Namen;
  * @author hoang
  *
  */
-public abstract class Einwohner extends stadtverwaltung.Steuerpflichtigen {
+public abstract class Einwohner extends stadtverwaltung.Steuerpflichtig {
 	public Namen name;
 	public double einkommen;
 
