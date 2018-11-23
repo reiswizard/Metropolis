@@ -10,7 +10,8 @@ import stadtverwaltung.Namen;
  *
  */
 public class Schurken extends Mutanten{
-	public boolean eingesperrt;
+	private boolean eingesperrt;
+	private boolean schuldig;
 
 	public Schurken(Namen name, int einkommen, String mutation, String superkraft) {
 		super(name, einkommen, mutation, superkraft);
@@ -36,4 +37,19 @@ public class Schurken extends Mutanten{
 
 	}
 
+	public boolean isSchuldig() {
+		return schuldig;
+	}
+
+	public boolean isEingesperrt() {
+		return eingesperrt;
+	}
+
+	public void setSchuldig(boolean schuldig) {
+		this.schuldig = schuldig;
+	}
+
+	public void setEingesperrt(boolean eingesperrt) {
+		this.eingesperrt = eingesperrt;
+	}
 }

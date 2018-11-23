@@ -17,11 +17,13 @@ public class Richter extends Menschen{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void verurteilen() {
+	public void verurteilen(Schurken gefangene) {
 		if(korrupt) {
-
+			gefangene.setSchuldig(!korrupt);
+			gefangene.setEingesperrt(!korrupt);
 		} else {
-
+			gefangene.setSchuldig(!korrupt);
+			gefangene.setEingesperrt(!korrupt);
 		}
 	}
 
