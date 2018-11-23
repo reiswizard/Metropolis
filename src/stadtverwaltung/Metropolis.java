@@ -13,7 +13,7 @@ import personen.Einwohner;
  *
  */
 public class Metropolis {
-	static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#,##0.00");
+	static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#0");
 
 	public Finanzamt finanzamt;
 	public Einwohner[] einwohnern;

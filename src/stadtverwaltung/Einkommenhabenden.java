@@ -48,4 +48,48 @@ public abstract class Einkommenhabenden {
 		return 0;
 	}
 
+	public double berechneEinkommensteuer(Einkommenhabenden personen) {
+		double Einkommensteuer = 0;
+		if(!(personen.getEinkommensteuerpflichtig())) {
+			return Einkommensteuer;
+		} else {
+			if(personen.getEinkommen()<=20000) {
+				Einkommensteuer = personen.getEinkommen()*0.1;
+			}
+			else if(personen.getEinkommen()<=60000) {
+				Einkommensteuer = (personen.getEinkommen()-20000)*0.25+2000;
+			}
+			else if(personen.getEinkommen()<=120000) {
+				Einkommensteuer = (personen.getEinkommen()-60000)*0.35+12000;
+			}
+			else if(personen.getEinkommen()>200000) {
+				Einkommensteuer = (personen.getEinkommen()-120000)*0.5+33000;
+			}
+		}
+		return Einkommensteuer;
+	}
+
+	public double berechneGewerbesteuer(Einkommenhabenden personen) {
+		double Gewerbesteuer = 0;
+		if(!(personen.getGewerbesteuerpflichtig())) {
+			return Gewerbesteuer;
+		} else {
+			Gewerbesteuer = personen.getEinkommen()*0.1;
+			if ((personen.getEinkommensteuerpflichtig()) && Gewerbesteuer<=1000) {
+				Gewerbesteuer=-1000;
+			}
+		}
+		return Gewerbesteuer;
+	}
+
+	public double berechneKoerperschaftsteuer(Einkommenhabenden personen) {
+		double Koerperschaftsteuer = 0;
+		if(!(personen.getKoerperschaftsteuerpflichtig())) {
+			return Koerperschaftsteuer;
+		} else {
+			Koerperschaftsteuer = personen.getEinkommen()*0.25;
+		}
+		return Koerperschaftsteuer;
+	}
+
 }

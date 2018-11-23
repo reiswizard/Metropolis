@@ -11,7 +11,7 @@ import stadtverwaltung.Namen;
  */
 public abstract class Menschen extends Einwohner {
 	protected String jobs;
-	private int alter;
+	protected int alter;
 
 	public Menschen(){	}
 
