@@ -19,7 +19,7 @@ public class Syndikat extends Organisation{
 		this.mitglieder = mitglieder;
 		koerperschaftsteuerpflichtig = true;
 		for ( int i = 0; i < mitglieder.length; i++) {
-			this.einkommen = this.einkommen + this.getEinkommen();
+			this.einkommen = this.einkommen + mitglieder[i].getEinkommen();
 		}
 	}
 

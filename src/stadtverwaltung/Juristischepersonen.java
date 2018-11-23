@@ -1,22 +1,15 @@
-/**
- *
- */
 package stadtverwaltung;
 
-/**
- * @author hoang
- *
- */
-public abstract class Steuerpflichtig {
+public abstract class Juristischepersonen {
 	protected boolean einkommensteuerpflichtig;
 	protected boolean gewerbesteuerpflichtig;
 	protected boolean koerperschaftsteuerpflichtig;
 	protected double einkommen;
 
-	public Steuerpflichtig() { }
+	public Juristischepersonen() { }
 
 	public double getEinkommen() {
-		return this.einkommen;
+		return einkommen;
 	}
 
 	public abstract void steuernzahlen();
@@ -33,7 +26,7 @@ public abstract class Steuerpflichtig {
 	return this.koerperschaftsteuerpflichtig;
 	}
 
-	public double getEinkommensteuer(Steuerpflichtig...steuerpflichtige) {
+	public double getEinkommensteuer(Natuerlichepersonen...steuerpflichtige) {
 
 		return 0;
 	}
@@ -47,5 +40,4 @@ public abstract class Steuerpflichtig {
 
 		return 0;
 	}
-
 }
