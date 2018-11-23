@@ -14,7 +14,8 @@ public class Syndikat extends Organisation{
 	public Namen name;
 	public Schurken[] mitglieder;
 
-	public Syndikat(Namen name, Schurken...mitglieder) {
+	public Syndikat(Namen name, double einkommen, Schurken...mitglieder) {
+		super(einkommen);
 		this.name = name;
 		this.mitglieder = mitglieder;
 		koerperschaftsteuerpflichtig = true;

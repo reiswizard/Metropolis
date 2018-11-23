@@ -13,10 +13,8 @@ public abstract class Einwohner extends stadtverwaltung.Einkommenhabenden {
 	public Namen name;
 	public double einkommen;
 
-	public Einwohner(){	}
-
 	public Einwohner(Namen name, double einkommen) {
+		super(einkommen);
 		this.name = name;
-		this.einkommen = einkommen;
 	}
 }

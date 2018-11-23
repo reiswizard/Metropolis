@@ -3,6 +3,8 @@
  */
 package personen;
 
+import stadtverwaltung.Namen;
+
 /**
  * @author hoang
  *
@@ -12,8 +14,10 @@ public class Richter extends Menschen{
 	/**
 	 *
 	 */
-	public Richter(boolean korrupt) {
+	public Richter(Namen name, double einkommen, String jobs, int alter, boolean korrupt) {
+		super(name, einkommen, jobs, alter);
 		this.korrupt = korrupt;
+		this.jobs = "Richter";
 		// TODO Auto-generated constructor stub
 	}
 

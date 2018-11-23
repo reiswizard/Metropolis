@@ -3,17 +3,17 @@
  */
 package personen;
 
+import stadtverwaltung.Namen;
+
 /**
  * @author hoang
  *
  */
 public class Buerger extends Menschen {
 
-	public Buerger() {	}
-
-	public Buerger(String jobs) {
+	public Buerger(Namen name, double einkommen, String jobs, int alter) {
+		super(name, einkommen, jobs, alter);
 		einkommensteuerpflichtig = true;
-		this.jobs = jobs;
 	}
 
 	@Override

@@ -14,6 +14,7 @@ public abstract class Unternehmen extends Organisation{
 	public double gewinn;
 
 	public Unternehmen(Namen name, double gewinn) {
+		super(gewinn);
 		this.name = name;
 		this.gewinn = gewinn;
 		gewerbesteuerpflichtig = true;
