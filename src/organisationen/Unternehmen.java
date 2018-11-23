@@ -18,5 +18,4 @@ public abstract class Unternehmen extends Organisation{
 		this.gewinn = gewinn;
 		gewerbesteuerpflichtig = true;
 	}
-
 }

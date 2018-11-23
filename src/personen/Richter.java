@@ -25,4 +25,10 @@ public class Richter extends Menschen{
 		}
 	}
 
+	@Override
+	public void steuernzahlen() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

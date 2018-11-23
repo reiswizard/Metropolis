@@ -10,8 +10,13 @@ package stadtverwaltung;
 public class Finanzamt {
 
 
+	public double berechneSteuer() {
 
-	public double erhebeEinkommensteuer(double Einkommen, boolean einkommensteuerpflichtig) {
+
+		return 0;
+	}
+
+	public double berechneEinkommensteuer(double Einkommen, boolean einkommensteuerpflichtig) {
 		if(!einkommensteuerpflichtig) {
 			Einkommen = 0;
 		} else {
@@ -31,7 +36,7 @@ public class Finanzamt {
 		return Einkommen;
 	}
 
-	public double erhebeGewerbesteuer(double Einkommen, boolean gewerbesteuerpflichtig, boolean einkommensteuerpflichtig) {
+	public double berechneGewerbesteuer(double Einkommen, boolean gewerbesteuerpflichtig, boolean einkommensteuerpflichtig) {
 		if(!gewerbesteuerpflichtig) {
 			Einkommen = 0;
 		} else {
@@ -43,7 +48,7 @@ public class Finanzamt {
 		return Einkommen;
 	}
 
-	public double erhebeKoerperschaftsteuer(double Einkommen, boolean koerperschaftsteuer) {
+	public double berechneKoerperschaftsteuer(double Einkommen, boolean koerperschaftsteuer) {
 		if(!koerperschaftsteuer) {
 			Einkommen = 0;
 		} else {

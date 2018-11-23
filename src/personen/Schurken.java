@@ -30,4 +30,10 @@ public class Schurken extends Mutanten{
 
 	}
 
+	@Override
+	public void steuernzahlen() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

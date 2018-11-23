@@ -10,10 +10,18 @@ package stadtverwaltung;
 public abstract class Steuerpflichtig {
 	protected boolean einkommensteuerpflichtig;
 	protected boolean gewerbesteuerpflichtig;
-	protected boolean koerperschaftsteuer;
+	protected boolean koerperschaftsteuerpflichtig;
+	protected double einkommen;
 
+	public Steuerpflichtig() { }
 
-	public boolean getSteuerpflichtig() {
+	public double getEinkommen() {
+		return this.einkommen;
+	}
+
+	public abstract void steuernzahlen();
+
+	public boolean getEinkommensteuerpflichtig() {
 		return this.einkommensteuerpflichtig;
 	}
 
@@ -21,7 +29,23 @@ public abstract class Steuerpflichtig {
 	return this.gewerbesteuerpflichtig;
 	}
 
-	public boolean getKoerperschaftsteuer() {
-	return this.koerperschaftsteuer;
+	public boolean getKoerperschaftsteuerpflichtig() {
+	return this.koerperschaftsteuerpflichtig;
 	}
+
+	public double getEinkommensteuer(Steuerpflichtig...steuerpflichtige) {
+
+		return 0;
+	}
+
+	public double getGewerbesteuer() {
+
+		return 0;
+	}
+
+	public double getKoerperschaftsteuer() {
+
+		return 0;
+	}
+
 }

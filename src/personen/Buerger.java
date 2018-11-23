@@ -15,4 +15,10 @@ public class Buerger extends Menschen {
 		einkommensteuerpflichtig = true;
 		this.jobs = jobs;
 	}
+
+	@Override
+	public void steuernzahlen() {
+		// TODO Auto-generated method stub
+
+	}
 }

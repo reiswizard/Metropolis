@@ -3,6 +3,7 @@
  */
 package organisationen;
 
+import personen.Buerger;
 import stadtverwaltung.Namen;
 
 /**
@@ -10,11 +11,19 @@ import stadtverwaltung.Namen;
  *
  */
 public class Kapitalgesellschaften extends Unternehmen{
+	public Buerger[] gesellschafter;
 
-	public Kapitalgesellschaften(Namen name, double gewinn) {
+	public Kapitalgesellschaften(Namen name, double gewinn, Buerger...gesellschafter) {
 		super(name, gewinn);
-		koerperschaftsteuer = true;
+		this.gesellschafter = gesellschafter;
+		koerperschaftsteuerpflichtig = true;
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void steuernzahlen() {
+		// TODO Auto-generated method stub
+
 	}
 
 }
