@@ -3,6 +3,9 @@
  */
 package personen;
 
+import java.util.Arrays;
+import java.util.List;
+
 import stadtverwaltung.Namen;
 
 /**
@@ -20,15 +23,22 @@ public class Schurken extends Mutanten{
 	}
 
 	@Override
+	//Jedoch nur mit ein durch konstruktor
 	public void setSuperkraft(String...superkraft) {
 		// TODO Auto-generated method stub
-		this.superkraft = superkraft;
+		this.superkraefte = superkraft;
 	}
 
-	@Override
-	public void kaempfe() {
-		// TODO Auto-generated method stub
-
+	@SuppressWarnings("unlikely-arg-type")
+	public void kaempfe(Superhelden superheld) {
+		List<String> superkraefteliste = Arrays.asList(superheld.getSuperkraefte());
+		// verloren
+		if(superkraefteliste.contains(this.getSuperkraefte())) {
+			this.setEingesperrt(true);
+        } else {
+		// gewonnen
+        	System.out.println("Schurke hat den Kampf gewonnen und macht sich triumphal davon");
+        }
 	}
 
 	@Override

@@ -3,6 +3,9 @@
  */
 package personen;
 
+import java.util.Arrays;
+import java.util.List;
+
 import stadtverwaltung.Namen;
 
 /**
@@ -19,13 +22,19 @@ public class Superhelden extends Mutanten{
 	@Override
 	public void setSuperkraft(String... superkraft) {
 		// TODO Auto-generated method stub
-		this.superkraft = superkraft;
+		this.superkraefte = superkraft;
 	}
 
-	@Override
-	public void kaempfe() {
-		// TODO Auto-generated method stub
-
+	@SuppressWarnings("unlikely-arg-type")
+	public void kaempfe(Schurken schurke) {
+		List<String> superkraefteliste = Arrays.asList(superkraefte);
+		// gewonnen
+		if(superkraefteliste.contains(schurke.getSuperkraefte())) {
+			schurke.setEingesperrt(true);
+        } else {
+		// verloren
+        	System.out.println("Held wurde besiegt, Schurke ist entkommen.");
+        }
 	}
 
 	@Override

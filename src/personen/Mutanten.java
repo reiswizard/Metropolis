@@ -11,7 +11,7 @@ import stadtverwaltung.Namen;
  */
 public abstract class Mutanten extends Einwohner{
 	String mutation;
-	String[] superkraft;
+	String[] superkraefte;
 
 	public Mutanten() {	}
 
@@ -22,6 +22,7 @@ public abstract class Mutanten extends Einwohner{
 
 	public abstract void setSuperkraft(String...superkraft);
 
-	public abstract void kaempfe();
-
+	public String[] getSuperkraefte() {
+		return superkraefte;
+	}
 }
