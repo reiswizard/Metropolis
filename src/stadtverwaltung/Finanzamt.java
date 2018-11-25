@@ -25,7 +25,7 @@ public class Finanzamt {
 	}
 
 
-	public double berechneSteuer(Einkommenhabenden...personen) {
+	public long berechneSteuer(Einkommenhabenden...personen) {
 		double Einkommensteuer = 0;
 		for ( int i = 0; i < personen.length; i++) {
 			Einkommensteuer = Einkommensteuer + personen[i].berechneEinkommensteuer(personen[i]);
@@ -39,29 +39,29 @@ public class Finanzamt {
 			Koerperschaftsteuer = Koerperschaftsteuer + personen[i].berechneKoerperschaftsteuer(personen[i]);
 		}
 //		double steuer = Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
-		return Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
+		return (long) (Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer);
 	}
 
-	public double berechneBuergernsteuer() {
+	public long berechneBuergernsteuer() {
 		Buerger[] alleBuergern = new Buerger[buergern.size()];
 		alleBuergern = buergern.toArray(alleBuergern);
-		return berechneSteuer(alleBuergern);
+		return (long) (berechneSteuer(alleBuergern));
 	}
 
-	public double berechneSchurkensteuer() {
+	public long berechneSchurkensteuer() {
 		Schurken[] alleSchurken = new Schurken[schurkern.size()];
 		alleSchurken = schurkern.toArray(alleSchurken);
-		return berechneSteuer(alleSchurken);
+		return (long) (berechneSteuer(alleSchurken));
 	}
 
-	public double berechneOrganisationsteuer() {
+	public long berechneOrganisationsteuer() {
 		Organisation[] alleOrganisationen = new Organisation[organisationen.size()];
 		alleOrganisationen = organisationen.toArray(alleOrganisationen);
-		return berechneSteuer(alleOrganisationen);
+		return (long) (berechneSteuer(alleOrganisationen));
 	}
 
-	public double berechneAlleSteuer() {
-		return berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer();
+	public long  berechneAlleSteuer() {
+		return (long) (berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer());
 		}
 
 

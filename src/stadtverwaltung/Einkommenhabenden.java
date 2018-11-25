@@ -13,6 +13,9 @@ public abstract class Einkommenhabenden {
 	protected boolean koerperschaftsteuerpflichtig;
 	protected double einkommen;
 
+	public Einkommenhabenden() { }
+
+
 	public Einkommenhabenden(double einkommen) {
 		this.einkommen = einkommen;
 	}

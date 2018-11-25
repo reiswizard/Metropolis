@@ -4,18 +4,17 @@
 package organisationen;
 
 import personen.Schurken;
-import stadtverwaltung.Namen;
 
 /**
  * @author hoang
  *
  */
 public class Syndikat extends Organisation{
-	public Namen name;
+	public String name;
 	public Schurken[] mitglieder;
 
-	public Syndikat(Namen name, double einkommen, Schurken...mitglieder) {
-		super(einkommen);
+	public Syndikat(String name, Schurken...mitglieder) {
+//		super(einkommen);
 		this.name = name;
 		this.mitglieder = mitglieder;
 		koerperschaftsteuerpflichtig = true;
@@ -23,6 +22,7 @@ public class Syndikat extends Organisation{
 			this.einkommen = this.einkommen + mitglieder[i].getEinkommen();
 		}
 	}
+
 
 	@Override
 	public void steuernzahlen() {

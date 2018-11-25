@@ -15,6 +15,8 @@ public abstract class Unternehmen extends Organisation{
 	public double gewinn;
 	private static final List<Unternehmen> unternehmern = new ArrayList<>();
 
+	public Unternehmen() { }
+
 	public Unternehmen(String name, double gewinn) {
 		super(gewinn);
 		this.name = name;
