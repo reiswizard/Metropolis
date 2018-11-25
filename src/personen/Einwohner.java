@@ -3,18 +3,20 @@
  */
 package personen;
 
-import stadtverwaltung.Namen;
-
 /**
  * @author hoang
  *
  */
 public abstract class Einwohner extends stadtverwaltung.Einkommenhabenden {
-	public Namen name;
+	public String name;
 	public double einkommen;
 
-	public Einwohner(Namen name, double einkommen) {
+	public Einwohner(String name, double einkommen) {
 		super(einkommen);
 		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 }

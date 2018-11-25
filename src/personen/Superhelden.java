@@ -6,15 +6,13 @@ package personen;
 import java.util.Arrays;
 import java.util.List;
 
-import stadtverwaltung.Namen;
-
 /**
  * @author hoang
  *
  */
 public class Superhelden extends Mutanten{
 
-	public Superhelden(Namen name, int einkommen, String mutation, String...superkraft) {
+	public Superhelden(String name, int einkommen, String mutation, String...superkraft) {
 		super(name, einkommen, mutation, superkraft);
 		// TODO Auto-generated constructor stub
 	}

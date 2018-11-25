@@ -4,7 +4,6 @@
 package organisationen;
 
 import personen.Buerger;
-import stadtverwaltung.Namen;
 
 /**
  * @author hoang
@@ -13,7 +12,7 @@ import stadtverwaltung.Namen;
 public class Personengesellschaften extends Unternehmen{
 	public Buerger[] inhaber;
 
-	public Personengesellschaften(Namen name, double gewinn, Buerger...inhaber) {
+	public Personengesellschaften(String name, double gewinn, Buerger...inhaber) {
 		super(name, gewinn);
 		this.inhaber = inhaber;
 		einkommensteuerpflichtig = true;

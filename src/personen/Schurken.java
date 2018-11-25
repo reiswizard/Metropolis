@@ -3,10 +3,11 @@
  */
 package personen;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import stadtverwaltung.Namen;
+import stadtverwaltung.Finanzamt;
 
 /**
  * @author hoang
@@ -15,10 +16,13 @@ import stadtverwaltung.Namen;
 public class Schurken extends Mutanten{
 	private boolean eingesperrt;
 	private boolean schuldig;
+	private static final List<Schurken> schurkern = new ArrayList<>();
 
-	public Schurken(Namen name, int einkommen, String mutation, String superkraft) {
+	public Schurken(String name, int einkommen, String mutation, String superkraft) {
 		super(name, einkommen, mutation, superkraft);
 		einkommensteuerpflichtig = true;
+		Schurken.schurkern.add(this);
+		Finanzamt.setSchurken(this);
 		// TODO Auto-generated constructor stub
 	}
 

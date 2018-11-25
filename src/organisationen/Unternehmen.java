@@ -3,20 +3,23 @@
  */
 package organisationen;
 
-import stadtverwaltung.Namen;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author hoang
  *
  */
 public abstract class Unternehmen extends Organisation{
-	public Namen name;
+	public String name;
 	public double gewinn;
+	private static final List<Unternehmen> unternehmern = new ArrayList<>();
 
-	public Unternehmen(Namen name, double gewinn) {
+	public Unternehmen(String name, double gewinn) {
 		super(gewinn);
 		this.name = name;
 		this.gewinn = gewinn;
 		gewerbesteuerpflichtig = true;
+		Unternehmen.unternehmern.add(this);
 	}
 }

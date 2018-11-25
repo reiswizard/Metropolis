@@ -1,7 +1,9 @@
 package stadtverwaltung;
 
-import organisationen.Syndikat;
-import organisationen.Unternehmen;
+import java.util.ArrayList;
+import java.util.List;
+
+import organisationen.Organisation;
 import personen.Buerger;
 import personen.Schurken;
 
@@ -14,17 +16,12 @@ import personen.Schurken;
  *
  */
 public class Finanzamt {
-	public String name;
-	//in Liste umwandeln und setter in den Constructoren von genannten Klassen erschaffen
-	private static Buerger[] steuerzahlendeBuerger;
-	private static Schurken[] steuerzahlendeSchurken;
-	private static Syndikat[] steuerzahlendeSyndikate;
-	private static Unternehmen[] steuerzahlendeUnternehmen;
+	private static List<Buerger> buergern = new ArrayList<Buerger>();
+	private static List<Schurken> schurkern = new ArrayList<Schurken>();
+	private static List<Organisation> organisationen = new ArrayList<Organisation>();
 
 
-
-	public Finanzamt(String Name) {
-		this.name = "Finanzamt Metropolis";
+	public Finanzamt() {
 	}
 
 
@@ -41,8 +38,52 @@ public class Finanzamt {
 		for ( int i = 0; i < personen.length; i++) {
 			Koerperschaftsteuer = Koerperschaftsteuer + personen[i].berechneKoerperschaftsteuer(personen[i]);
 		}
-		double steuer = Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
-
-		return steuer;
+//		double steuer = Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
+		return Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
 	}
+
+	public double berechneBuergernsteuer() {
+		Buerger[] alleBuergern = new Buerger[buergern.size()];
+		alleBuergern = buergern.toArray(alleBuergern);
+		return berechneSteuer(alleBuergern);
+	}
+
+	public double berechneSchurkensteuer() {
+		Schurken[] alleSchurken = new Schurken[schurkern.size()];
+		alleSchurken = schurkern.toArray(alleSchurken);
+		return berechneSteuer(alleSchurken);
+	}
+
+	public double berechneOrganisationsteuer() {
+		Organisation[] alleOrganisationen = new Organisation[organisationen.size()];
+		alleOrganisationen = organisationen.toArray(alleOrganisationen);
+		return berechneSteuer(alleOrganisationen);
+	}
+
+	public double berechneAlleSteuer() {
+		return berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer();
+		}
+
+
+	public static void setBuerger(Buerger peasant) {
+		Finanzamt.buergern.add(peasant);
+	}
+	public static List<Buerger> getAlleBuerger() {
+		return buergern;
+	}
+
+	public static void setSchurken(Schurken schurke) {
+		Finanzamt.schurkern.add(schurke);
+	}
+	public static List<Schurken> getAlleSchurken() {
+		return schurkern;
+	}
+
+	public static void setOrganisation(Organisation organisation) {
+		Finanzamt.organisationen.add(organisation);
+	}
+	public static List<Organisation> getAlleOrganisation() {
+		return organisationen;
+	}
+
 }
