@@ -49,7 +49,7 @@ public class Metropolis {
 		double steuer = finanzamtMetropolis.berechneSteuer(elvisH);
 		System.out.println("Buerger Elvis zahlt " + steuer + " Metro Dollar an Steuern");
 
-		System.out.println("R3ICH zahlt " + finanzamtMetropolis.berechneSteuer(r3ich) + " an Steuer");
+		System.out.println("Unternehmen R3ICH zahlt " + finanzamtMetropolis.berechneSteuer(r3ich) + " an Steuer");
 		System.out.println("Die Stadt nehmt " + finanzamtMetropolis.berechneBuergernsteuer() + " Metro Dollar an Steuern von Buerger ein");
 		System.out.println("Die Stadt nehmt  " + finanzamtMetropolis.berechneAlleSteuer() + " Metro Dollar insgesamt an Steuern ein");
 	}

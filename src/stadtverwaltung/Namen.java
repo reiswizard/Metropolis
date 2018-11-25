@@ -8,7 +8,6 @@ package stadtverwaltung;
  *
  */
 public class Namen {
-
 	private String Nachname;
 	private String Vornamen;
 
@@ -21,10 +20,10 @@ public class Namen {
 		this.Vornamen = Vornamen;
 	}
 
-	private void setNamen(String Name) {
+	public void setNamen(String Name) {
 		this.Nachname = Name;
 	}
-	private void setNamen(String Nachname, String Vornamen) {
+	public void setNamen(String Nachname, String Vornamen) {
 		this.Nachname = Nachname;
 		this.Vornamen = Vornamen;
 	}

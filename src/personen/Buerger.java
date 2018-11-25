@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import stadtverwaltung.Finanzamt;
+import stadtverwaltung.Namen;
 
 /**
  * @author hoang
@@ -14,12 +15,15 @@ import stadtverwaltung.Finanzamt;
  */
 public class Buerger extends Menschen {
 	private static final List<Buerger> buergern = new ArrayList<>();
+	private Namen names;
 
+//	public Buerger(String name, String vorname, String nachname, double einkommen, String jobs, int alter) {
 	public Buerger(String name, double einkommen, String jobs, int alter) {
 		super(name, einkommen, jobs, alter);
 		einkommensteuerpflichtig = true;
 		Buerger.buergern.add(this);
 		Finanzamt.setBuerger(this);
+//		this.names = new Namen(nachname, vorname);
 	}
 
 	@Override
