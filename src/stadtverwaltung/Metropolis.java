@@ -44,7 +44,7 @@ public class Metropolis {
 		Namen minh = new Namen("Ming", "Phan");
 		Buerger mingP = new Buerger(minh, 17000, "Sovierspion", 30);
 
-		double steuer = finanzamtMetropolis.berechneSteuer(mingP, elvisH);
+		double steuer = finanzamtMetropolis.berechneSteuer(mingP, elvisH, alexR, bernS);
 
 		System.out.println(elvisH.getEinkommen());
 		System.out.println("Buerger Elvis zahlt " + steuer + " Metro Dollar an Steuern");

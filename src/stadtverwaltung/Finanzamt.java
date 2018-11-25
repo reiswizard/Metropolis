@@ -1,4 +1,10 @@
 package stadtverwaltung;
+
+import organisationen.Syndikat;
+import organisationen.Unternehmen;
+import personen.Buerger;
+import personen.Schurken;
+
 /**
  *
  */
@@ -8,7 +14,14 @@ package stadtverwaltung;
  *
  */
 public class Finanzamt {
-	String name;
+	public String name;
+	//in Liste umwandeln und setter in den Constructoren von genannten Klassen erschaffen
+	private static Buerger[] steuerzahlendeBuerger;
+	private static Schurken[] steuerzahlendeSchurken;
+	private static Syndikat[] steuerzahlendeSyndikate;
+	private static Unternehmen[] steuerzahlendeUnternehmen;
+
+
 
 	public Finanzamt(String Name) {
 		this.name = "Finanzamt Metropolis";
