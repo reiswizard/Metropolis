@@ -10,9 +10,9 @@ import java.util.List;
  * @author hoang
  *
  */
-public class Superhelden extends Mutanten{
+public class Superheld extends Mutant{
 
-	public Superhelden(String name, int einkommen, String mutation, String...superkraft) {
+	public Superheld(String name, double einkommen, String mutation, String...superkraft) {
 		super(name, einkommen, mutation, superkraft);
 		// TODO Auto-generated constructor stub
 	}
@@ -24,7 +24,7 @@ public class Superhelden extends Mutanten{
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
-	public void kaempfe(Schurken schurke) {
+	public void kaempfe(Schurke schurke) {
 		List<String> superkraefteliste = Arrays.asList(superkraefte);
 		// gewonnen
 		if(superkraefteliste.contains(schurke.getSuperkraefte())) {

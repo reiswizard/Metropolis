@@ -7,15 +7,15 @@ package stadtverwaltung;
  * @author hoang
  *
  */
-public class Namen {
+public class Name {
 	private String Nachname;
 	private String Vornamen;
 
-	public Namen(String Name) {
+	public Name(String Name) {
 		this.Nachname = Name;
 		this.Vornamen = null;
 	}
-	public Namen(String Nachname, String Vornamen) {
+	public Name(String Nachname, String Vornamen) {
 		this.Nachname = Nachname;
 		this.Vornamen = Vornamen;
 	}
@@ -32,7 +32,7 @@ public class Namen {
 		if(this.Vornamen==null) {
 			return this.Nachname;
 		} else {
-			return this.Nachname + " " + this.Vornamen;
+			return (this.Nachname + " " + this.Vornamen);
 		}
 	}
 }

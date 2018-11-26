@@ -2,7 +2,7 @@ package organisationen;
 
 import stadtverwaltung.Finanzamt;
 
-public abstract class Organisation extends stadtverwaltung.Einkommenhabenden {
+public abstract class Organisation extends stadtverwaltung.Einkommenhabende {
 
 	public Organisation() { }
 

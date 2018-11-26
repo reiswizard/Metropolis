@@ -5,10 +5,11 @@ package stadtverwaltung;
 
 import java.text.DecimalFormat;
 
-import organisationen.Kapitalgesellschaften;
+import organisationen.Kapitalgesellschaft;
 import organisationen.Syndikat;
 import personen.Buerger;
-import personen.Schurken;
+import personen.Schurke;
+import personen.Superheld;
 
 /**
  * @author hoang
@@ -30,26 +31,41 @@ public class Metropolis {
 	 */
 	@SuppressWarnings("null")
 	public static void main(String[] args) {
-//		Finanzamt finanzamtMetropolis = new Finanzamt("Finanzamt Metropolis");
 		Finanzamt finanzamtMetropolis = new Finanzamt();
 
-		Buerger elvisH = new Buerger("elvis", 13000, "Student", 19);
-		Buerger bernS = new Buerger("bern", 20000, "Autist", 23);
-		Buerger phillippP = new Buerger("phillipp", 15000, "Pumper", 24);
-		Buerger alexR = new Buerger("alex", 10000, "Zuhälter", 40);
-		Buerger mingP = new Buerger("minh", 17000, "Sovierspion", 30);
+		Superheld superman = new Superheld("Superman", 50000, "krypton", new String[]{"superstark", "laseraugen", "unbesiegbar"});
+		Superheld ironman = new Superheld("Iron Man", 60000, "krypton", "super");
+		Superheld thor = new Superheld("Thor", 80000, "krypton", "super");
+		Superheld loki = new Superheld("Loki", 60000, "krypton", "super");
+		Superheld spiderman = new Superheld("Spiderman", 30000, "krypton", "super");
+		Superheld wonderWoman = new Superheld("Wonder Woman", 40000, "krypton", "super");
+		Superheld captainAmerica = new Superheld("Captain America", 90000, "krypton", "super");
+		Superheld hulk = new Superheld("Hulk", 20000, "krypton", "super");
+		Superheld blackWidow = new Superheld("Black Widow", 180000, "krypton", "super");
+		Superheld batman = new Superheld("Batman", 2500000, "krypton", "super");
 
-		Schurken joker = new Schurken("Der Joker", 10000, "hässlich", "Böse");
-
-		Kapitalgesellschaften r3ich = new Kapitalgesellschaften("R3ICH", 10000, new Buerger[]{mingP, alexR});
-		Syndikat dasBoese = new Syndikat("Das Boerse", new Schurken[]{joker});
 
 
-		System.out.println(Finanzamt.getAlleBuerger().size());
+
+		Buerger elvisH = new Buerger("elvis", "herbrandt", 13000, "Student", 19);
+		Buerger bernS = new Buerger("bern", "scheibner", 20000, "Autist", 23);
+		Buerger phillippP = new Buerger("phillipp", "poerkling", 15000, "Pumper", 24);
+		Buerger alexR = new Buerger("alex", "remili", 10000, "Zuhälter", 40);
+		Buerger mingP = new Buerger("minh", "phan", 17000, "Sovietspion", 30);
+
+
+		Schurke joker = new Schurke("Joker",80000, "joker", "superjoker");
+		Schurke catWoman = new Schurke("Cat Woman", 150000, "joker", "superjoker");
+		System.out.println((joker.getName()).getNamen());
+		System.out.println(joker.getEinkommen());
+
+		Kapitalgesellschaft r3ich = new Kapitalgesellschaft("R3ICH", 10000, new Buerger[]{mingP, alexR});
+		Syndikat dasBoese = new Syndikat("Das Boerse", new Schurke[]{joker});
+
 
 		for (Buerger i : Finanzamt.getAlleBuerger()) {
-			  System.out.println(i.getName());
-			}
+			  System.out.println((i.getName()).getNamen());
+		}
 
 		double steuer = finanzamtMetropolis.berechneSteuer(elvisH);
 		System.out.println("Buerger Elvis zahlt " + steuer + " Metro Dollar an Steuern");

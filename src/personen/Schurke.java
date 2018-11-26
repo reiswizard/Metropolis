@@ -13,15 +13,15 @@ import stadtverwaltung.Finanzamt;
  * @author hoang
  *
  */
-public class Schurken extends Mutanten{
+public class Schurke extends Mutant{
 	private boolean eingesperrt;
 	private boolean schuldig;
-	private static final List<Schurken> schurkern = new ArrayList<>();
+	private static final List<Schurke> schurkern = new ArrayList<>();
 
-	public Schurken(String name, int einkommen, String mutation, String superkraft) {
+	public Schurke(String name, double einkommen, String mutation, String superkraft) {
 		super(name, einkommen, mutation, superkraft);
 		einkommensteuerpflichtig = true;
-		Schurken.schurkern.add(this);
+		Schurke.schurkern.add(this);
 		Finanzamt.setSchurken(this);
 		// TODO Auto-generated constructor stub
 	}
@@ -34,7 +34,7 @@ public class Schurken extends Mutanten{
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
-	public void kaempfe(Superhelden superheld) {
+	public void kaempfe(Superheld superheld) {
 		List<String> superkraefteliste = Arrays.asList(superheld.getSuperkraefte());
 		// verloren
 		if(superkraefteliste.contains(this.getSuperkraefte())) {

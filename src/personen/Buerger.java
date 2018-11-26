@@ -7,23 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import stadtverwaltung.Finanzamt;
-import stadtverwaltung.Namen;
+import stadtverwaltung.Name;
 
 /**
  * @author hoang
  *
  */
-public class Buerger extends Menschen {
+public class Buerger extends Mensch {
 	private static final List<Buerger> buergern = new ArrayList<>();
-	private Namen names;
+	private Name name;
 
-//	public Buerger(String name, String vorname, String nachname, double einkommen, String jobs, int alter) {
-	public Buerger(String name, double einkommen, String jobs, int alter) {
-		super(name, einkommen, jobs, alter);
+	public Buerger(String nachname, String vorname, double einkommen, String jobs, int alter) {
+		super(nachname, vorname, einkommen, jobs, alter);
 		einkommensteuerpflichtig = true;
 		Buerger.buergern.add(this);
 		Finanzamt.setBuerger(this);
-//		this.names = new Namen(nachname, vorname);
 	}
 
 	@Override
@@ -31,7 +29,13 @@ public class Buerger extends Menschen {
 		// TODO Auto-generated method stub
 	}
 
-	public static List<Buerger> getAlleBuerger() {
-		return buergern;
+//	public static List<Buerger> getAlleBuerger() {
+//		return buergern;
+//	}
+	public Buerger[] getAlleMutanten() {
+		Buerger[] alleBuergern = new Buerger[buergern.size()];
+		alleBuergern = buergern.toArray(alleBuergern);
+		return alleBuergern;
 	}
+
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 import organisationen.Organisation;
 import personen.Buerger;
-import personen.Schurken;
+import personen.Schurke;
 
 /**
  *
@@ -17,7 +17,7 @@ import personen.Schurken;
  */
 public class Finanzamt {
 	private static List<Buerger> buergern = new ArrayList<Buerger>();
-	private static List<Schurken> schurkern = new ArrayList<Schurken>();
+	private static List<Schurke> schurkern = new ArrayList<Schurke>();
 	private static List<Organisation> organisationen = new ArrayList<Organisation>();
 
 
@@ -25,7 +25,7 @@ public class Finanzamt {
 	}
 
 
-	public long berechneSteuer(Einkommenhabenden...personen) {
+	public long berechneSteuer(Einkommenhabende...personen) {
 		double Einkommensteuer = 0;
 		for ( int i = 0; i < personen.length; i++) {
 			Einkommensteuer = Einkommensteuer + personen[i].berechneEinkommensteuer(personen[i]);
@@ -45,11 +45,11 @@ public class Finanzamt {
 	public long berechneBuergernsteuer() {
 		Buerger[] alleBuergern = new Buerger[buergern.size()];
 		alleBuergern = buergern.toArray(alleBuergern);
-		return (long) (berechneSteuer(alleBuergern));
+		return (berechneSteuer(alleBuergern));
 	}
 
 	public long berechneSchurkensteuer() {
-		Schurken[] alleSchurken = new Schurken[schurkern.size()];
+		Schurke[] alleSchurken = new Schurke[schurkern.size()];
 		alleSchurken = schurkern.toArray(alleSchurken);
 		return (long) (berechneSteuer(alleSchurken));
 	}
@@ -57,11 +57,11 @@ public class Finanzamt {
 	public long berechneOrganisationsteuer() {
 		Organisation[] alleOrganisationen = new Organisation[organisationen.size()];
 		alleOrganisationen = organisationen.toArray(alleOrganisationen);
-		return (long) (berechneSteuer(alleOrganisationen));
+		return (berechneSteuer(alleOrganisationen));
 	}
 
 	public long  berechneAlleSteuer() {
-		return (long) (berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer());
+		return berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer();
 		}
 
 
@@ -72,10 +72,10 @@ public class Finanzamt {
 		return buergern;
 	}
 
-	public static void setSchurken(Schurken schurke) {
+	public static void setSchurken(Schurke schurke) {
 		Finanzamt.schurkern.add(schurke);
 	}
-	public static List<Schurken> getAlleSchurken() {
+	public static List<Schurke> getAlleSchurken() {
 		return schurkern;
 	}
 

@@ -9,10 +9,10 @@ import personen.Buerger;
  * @author hoang
  *
  */
-public class Kapitalgesellschaften extends Unternehmen{
+public class Kapitalgesellschaft extends Unternehmen{
 	public Buerger[] gesellschafter;
 
-	public Kapitalgesellschaften(String name, double gewinn, Buerger...gesellschafter) {
+	public Kapitalgesellschaft(String name, double gewinn, Buerger...gesellschafter) {
 		super(name, gewinn);
 		this.gesellschafter = gesellschafter;
 		koerperschaftsteuerpflichtig = true;

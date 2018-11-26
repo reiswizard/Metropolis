@@ -3,7 +3,7 @@
  */
 package organisationen;
 
-import personen.Schurken;
+import personen.Schurke;
 
 /**
  * @author hoang
@@ -11,10 +11,9 @@ import personen.Schurken;
  */
 public class Syndikat extends Organisation{
 	public String name;
-	public Schurken[] mitglieder;
+	public Schurke[] mitglieder;
 
-	public Syndikat(String name, Schurken...mitglieder) {
-//		super(einkommen);
+	public Syndikat(String name, Schurke...mitglieder) {
 		this.name = name;
 		this.mitglieder = mitglieder;
 		koerperschaftsteuerpflichtig = true;

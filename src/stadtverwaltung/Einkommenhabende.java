@@ -7,16 +7,16 @@ package stadtverwaltung;
  * @author hoang
  *
  */
-public abstract class Einkommenhabenden {
+public abstract class Einkommenhabende {
 	protected boolean einkommensteuerpflichtig;
 	protected boolean gewerbesteuerpflichtig;
 	protected boolean koerperschaftsteuerpflichtig;
 	protected double einkommen;
 
-	public Einkommenhabenden() { }
+	public Einkommenhabende() { }
 
 
-	public Einkommenhabenden(double einkommen) {
+	public Einkommenhabende(double einkommen) {
 		this.einkommen = einkommen;
 	}
 
@@ -38,7 +38,7 @@ public abstract class Einkommenhabenden {
 	return this.koerperschaftsteuerpflichtig;
 	}
 
-	public double getEinkommensteuer(Einkommenhabenden...steuerpflichtige) {
+	public double getEinkommensteuer(Einkommenhabende...steuerpflichtige) {
 
 		return 0;
 	}
@@ -53,7 +53,7 @@ public abstract class Einkommenhabenden {
 		return 0;
 	}
 
-	public double berechneEinkommensteuer(Einkommenhabenden personen) {
+	public double berechneEinkommensteuer(Einkommenhabende personen) {
 		double Einkommensteuer = 0;
 		if(!(personen.getEinkommensteuerpflichtig())) {
 			return Einkommensteuer;
@@ -74,7 +74,7 @@ public abstract class Einkommenhabenden {
 		return Einkommensteuer;
 	}
 
-	public double berechneGewerbesteuer(Einkommenhabenden personen) {
+	public double berechneGewerbesteuer(Einkommenhabende personen) {
 		double Gewerbesteuer = 0;
 		if(!(personen.getGewerbesteuerpflichtig())) {
 			return Gewerbesteuer;
@@ -87,7 +87,7 @@ public abstract class Einkommenhabenden {
 		return Gewerbesteuer;
 	}
 
-	public double berechneKoerperschaftsteuer(Einkommenhabenden personen) {
+	public double berechneKoerperschaftsteuer(Einkommenhabende personen) {
 		double Koerperschaftsteuer = 0;
 		if(!(personen.getKoerperschaftsteuerpflichtig())) {
 			return Koerperschaftsteuer;
