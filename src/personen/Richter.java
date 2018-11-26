@@ -3,6 +3,8 @@
  */
 package personen;
 
+import exception.NegativeIncomeException;
+
 /**
  * @author hoang
  *
@@ -10,16 +12,17 @@ package personen;
 public class Richter extends Mensch{
 	boolean korrupt;
 	/**
+	 * @throws NegativeIncomeException 
 	 *
 	 */
-	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter) {
+	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = false;
 		this.jobs = "Richter";
 		
 	}
 
-	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter, boolean korrupt) {
+	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter, boolean korrupt) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = korrupt;
 		this.jobs = "Richter";

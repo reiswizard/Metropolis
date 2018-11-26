@@ -2,7 +2,7 @@
  *
  */
 package stadtverwaltung;
-
+import exception.*;
 /**
  * @author hoang
  *
@@ -16,7 +16,10 @@ public abstract class Einkommenhabende {
 	public Einkommenhabende() { }
 
 
-	public Einkommenhabende(double einkommen) {
+	public Einkommenhabende(double einkommen)throws NegativeIncomeException {
+		if (einkommen <0)
+		{throw new NegativeIncomeException("Negatives Einkommen existiert nicht", einkommen);}
+			
 		this.einkommen = einkommen;
 	}
 

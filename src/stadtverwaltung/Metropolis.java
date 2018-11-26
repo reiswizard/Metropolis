@@ -5,6 +5,7 @@ package stadtverwaltung;
 
 import java.text.DecimalFormat;
 
+import exception.NegativeIncomeException;
 import organisationen.Kapitalgesellschaft;
 import organisationen.Syndikat;
 import personen.Buerger;
@@ -32,7 +33,7 @@ public class Metropolis {
 	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		Finanzamt finanzamtMetropolis = new Finanzamt();
-
+try {
 		Superheld superman = new Superheld("Superman", 50000, "krypton", new String[]{"superstark", "laseraugen", "unbesiegbar"});
 		Superheld ironman = new Superheld("Iron Man", 60000, "krypton", "super");
 		Superheld thor = new Superheld("Thor", 80000, "krypton", "super");
@@ -47,15 +48,16 @@ public class Metropolis {
 
 
 
-		Buerger elvisH = new Buerger("elvis", "herbrandt", 13000, "Student", 19);
-		Buerger bernS = new Buerger("bern", "scheibner", 20000, "Autist", 23);
-		Buerger phillippP = new Buerger("phillipp", "poerkling", 15000, "Pumper", 24);
-		Buerger alexR = new Buerger("alex", "remili", 10000, "Zuhälter", 40);
-		Buerger mingP = new Buerger("minh", "phan", 17000, "Sovietspion", 30);
-
-
+		Buerger elvisH = new Buerger("Helblandt", "Elvis", 130000, "Beamter", 19);
+		Buerger bernS = new Buerger("Scheibnel", "Beln", 20000, "Autist", 24);
+		Buerger phillippP = new Buerger("Poerkling", "Felix", 15000, "Pumper", 23);
+		Buerger alexR = new Buerger("Remili", "Alexander", 10000, "Zuhälter", 38);
+		Buerger mingP = new Buerger("Ling", "Ling", 17000, "Sovietspion", 26);
+		Buerger schuldner = new Buerger ("sau", "arme",-5, "schuldner", 25);
+		
 		Schurke joker = new Schurke("Joker",80000, "joker", "superjoker");
 		Schurke catWoman = new Schurke("Cat Woman", 150000, "joker", "superjoker");
+
 		System.out.println(joker.getName());
 		System.out.println(joker.getEinkommen());
 
@@ -75,6 +77,8 @@ public class Metropolis {
 		System.out.println("Unternehmen R3ICH zahlt " + finanzamtMetropolis.berechneSteuer(r3ich) + " an Steuer");
 		System.out.println("Die Stadt nehmt " + finanzamtMetropolis.berechneBuergernsteuer() + " Metro Dollar an Steuern von Buerger ein");
 		System.out.println("Die Stadt nehmt  " + finanzamtMetropolis.berechneAlleSteuer() + " Metro Dollar insgesamt an Steuern ein");
-	}
-
+}catch (NegativeIncomeException e1) {
+	System.err.println("Negatives Einkommen existiert nicht" + e1.getincome());}
 }
+
+	}

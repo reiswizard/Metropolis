@@ -3,7 +3,7 @@
  */
 package personen;
 
-
+import exception.NegativeIncomeException;
 
 /**
  * @author hoang
@@ -16,13 +16,13 @@ public abstract class Einwohner extends stadtverwaltung.Einkommenhabende {
 
 	public Einwohner() { }
 
-	public Einwohner(String vorname, String name, double einkommen) {
+	public Einwohner(String vorname, String name, double einkommen) throws NegativeIncomeException {
 		super(einkommen);
 		this.name = name;
 		this.vorname =vorname;
 	}
 
-	public Einwohner(String name, double einkommen) {
+	public Einwohner(String name, double einkommen) throws NegativeIncomeException {
 		super(einkommen);
 		this.name = name;
 		

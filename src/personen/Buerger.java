@@ -6,6 +6,7 @@ package personen;
 import java.util.ArrayList;
 import java.util.List;
 
+import exception.NegativeIncomeException;
 import stadtverwaltung.Finanzamt;
 import stadtverwaltung.*;
 
@@ -17,7 +18,7 @@ public class Buerger extends Mensch {
 	private static final List<Buerger> buergern = new ArrayList<>();
 	private String name;
 
-	public Buerger(String nachname, String vorname, double einkommen, String jobs, int alter) {
+	public Buerger(String nachname, String vorname, double einkommen, String jobs, int alter) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
 		einkommensteuerpflichtig = true;
 		Buerger.buergern.add(this);

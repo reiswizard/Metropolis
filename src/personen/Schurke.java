@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import exception.NegativeIncomeException;
 import stadtverwaltung.Finanzamt;
 
 /**
@@ -18,7 +19,7 @@ public class Schurke extends Mutant{
 	private boolean schuldig;
 	private static final List<Schurke> schurken = new ArrayList<>();
 
-	public Schurke(String name, double einkommen, String mutation, String superkraft) {
+	public Schurke(String name, double einkommen, String mutation, String superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
 		einkommensteuerpflichtig = true;
 		Schurke.schurken.add(this);

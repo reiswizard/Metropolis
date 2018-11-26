@@ -6,13 +6,15 @@ package personen;
 import java.util.Arrays;
 import java.util.List;
 
+import exception.NegativeIncomeException;
+
 /**
  * @author hoang
  *
  */
 public class Superheld extends Mutant{
 
-	public Superheld(String name, double einkommen, String mutation, String...superkraft) {
+	public Superheld(String name, double einkommen, String mutation, String...superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
 		
 	}

@@ -6,6 +6,8 @@ package organisationen;
 import java.util.ArrayList;
 import java.util.List;
 
+import exception.NegativeIncomeException;
+
 /**
  * @author hoang
  *
@@ -17,7 +19,7 @@ public abstract class Unternehmen extends Organisation{
 
 	public Unternehmen() { }
 
-	public Unternehmen(String name, double gewinn) {
+	public Unternehmen(String name, double gewinn) throws NegativeIncomeException {
 		super(gewinn);
 		this.name = name;
 		this.gewinn = gewinn;

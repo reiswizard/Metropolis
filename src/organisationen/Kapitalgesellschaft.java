@@ -3,6 +3,7 @@
  */
 package organisationen;
 
+import exception.NegativeIncomeException;
 import personen.Buerger;
 
 /**
@@ -12,7 +13,7 @@ import personen.Buerger;
 public class Kapitalgesellschaft extends Unternehmen{
 	public Buerger[] gesellschafter;
 
-	public Kapitalgesellschaft(String name, double gewinn, Buerger...gesellschafter) {
+	public Kapitalgesellschaft(String name, double gewinn, Buerger...gesellschafter) throws NegativeIncomeException {
 		super(name, gewinn);
 		this.gesellschafter = gesellschafter;
 		koerperschaftsteuerpflichtig = true;
