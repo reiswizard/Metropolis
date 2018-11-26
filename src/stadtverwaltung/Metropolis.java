@@ -56,7 +56,7 @@ public class Metropolis {
 
 		Schurke joker = new Schurke("Joker",80000, "joker", "superjoker");
 		Schurke catWoman = new Schurke("Cat Woman", 150000, "joker", "superjoker");
-		System.out.println((joker.getName()).getNamen());
+		System.out.println(joker.getName());
 		System.out.println(joker.getEinkommen());
 
 		Kapitalgesellschaft r3ich = new Kapitalgesellschaft("R3ICH", 10000, new Buerger[]{mingP, alexR});
@@ -64,7 +64,7 @@ public class Metropolis {
 
 
 		for (Buerger i : Finanzamt.getAlleBuerger()) {
-			  System.out.println((i.getName()).getNamen());
+			  System.out.println(i.getName());
 		}
 
 		double steuer = finanzamtMetropolis.berechneSteuer(elvisH);

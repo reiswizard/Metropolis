@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import stadtverwaltung.Finanzamt;
-import stadtverwaltung.Name;
+import stadtverwaltung.*;
 
 /**
  * @author hoang
@@ -15,7 +15,7 @@ import stadtverwaltung.Name;
  */
 public class Buerger extends Mensch {
 	private static final List<Buerger> buergern = new ArrayList<>();
-	private Name name;
+	private String name;
 
 	public Buerger(String nachname, String vorname, double einkommen, String jobs, int alter) {
 		super(nachname, vorname, einkommen, jobs, alter);

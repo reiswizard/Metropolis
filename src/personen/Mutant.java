@@ -6,8 +6,6 @@ package personen;
 import java.util.ArrayList;
 import java.util.List;
 
-import stadtverwaltung.Name;
-
 /**
  * @author hoang
  *
@@ -19,7 +17,7 @@ public abstract class Mutant extends Einwohner{
 
 	public Mutant(String name, double einkommen, String mutation, String...superkraft) {
 		super(name, einkommen);
-		this.name = new Name(name);
+		this.name = name;
 		this.einkommen = einkommen;
 		this.mutation = mutation;
 		Mutant.mutanten.add(this);
