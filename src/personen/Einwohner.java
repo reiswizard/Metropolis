@@ -31,7 +31,7 @@ public abstract class Einwohner extends stadtverwaltung.Einkommenhabende {
 	
 
 	public String getName() {
-		if (!vorname.isEmpty()) {
+		if (vorname!=null) {
 		return name+" "+vorname;
 		}
 		
