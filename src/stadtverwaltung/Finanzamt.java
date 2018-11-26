@@ -1,11 +1,6 @@
 package stadtverwaltung;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import organisationen.Organisation;
-import personen.Buerger;
-import personen.Schurke;
 
 /**
  *
@@ -16,74 +11,40 @@ import personen.Schurke;
  *
  */
 public class Finanzamt {
-	private static List<Buerger> buergern = new ArrayList<Buerger>();
-	private static List<Schurke> schurken = new ArrayList<Schurke>();
-	private static List<Organisation> organisationen = new ArrayList<Organisation>();
+//    public static Finanzamt myFinanzamt;
+    public static ArrayList<Steuerpflichtig> steuerpflichtige = new ArrayList<Steuerpflichtig>();
 
+    public Finanzamt() {
+    }
 
-	public Finanzamt() {
-	}
+//    public static Finanzamt getInstanz() {
+//        if (Finanzamt.myFinanzamt == null) {
+//            Finanzamt.myFinanzamt = new Finanzamt();
+//        }
+//        return Finanzamt.myFinanzamt;
+//    }
 
+    public void addSteuerpflichtige(Steuerpflichtig irgendwer) {
+        steuerpflichtige.add(irgendwer);
+    }
 
-	public long berechneSteuer(Einkommenhabende...personen) {
-		double Einkommensteuer = 0;
-		for ( int i = 0; i < personen.length; i++) {
-			Einkommensteuer = Einkommensteuer + personen[i].berechneEinkommensteuer(personen[i]);
-		}
-		double Gewerbesteuer = 0;
-		for ( int i = 0; i < personen.length; i++) {
-			Gewerbesteuer = Gewerbesteuer + personen[i].berechneGewerbesteuer(personen[i]);
-		}
-		double Koerperschaftsteuer = 0;
-		for ( int i = 0; i < personen.length; i++) {
-			Koerperschaftsteuer = Koerperschaftsteuer + personen[i].berechneKoerperschaftsteuer(personen[i]);
-		}
-//		double steuer = Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer;
-		return (long) (Einkommensteuer+Gewerbesteuer+Koerperschaftsteuer);
-	}
+    public void getSteuerpflichtige() {
+        for (int i = 0; i < steuerpflichtige.size(); i++) {
+            System.out.println(steuerpflichtige.get(i).toString());
+        }
 
-	public long berechneBuergernsteuer() {
-		Buerger[] alleBuergern = new Buerger[buergern.size()];
-		alleBuergern = buergern.toArray(alleBuergern);
-		return (berechneSteuer(alleBuergern));
-	}
+    }
+    
+    public double berechneEinkommenssteuer() {
+        double Einkommenssteuer = 0;
+    for(int i=0;i<steuerpflichtige.size();i++) {
+        if(steuerpflichtige.get(i) instanceof Einkommenssteuer) {
+            Einkommenssteuer=Einkommenssteuer+steuerpflichtige.get(i).getEinkommen();
+        }
+            
+    }
+    return Einkommenssteuer;
+    }
 
-	public long berechneSchurkensteuer() {
-		Schurke[] alleSchurken = new Schurke[schurken.size()];
-		alleSchurken = schurken.toArray(alleSchurken);
-		return (long) (berechneSteuer(alleSchurken));
-	}
-
-	public long berechneOrganisationsteuer() {
-		Organisation[] alleOrganisationen = new Organisation[organisationen.size()];
-		alleOrganisationen = organisationen.toArray(alleOrganisationen);
-		return (berechneSteuer(alleOrganisationen));
-	}
-
-	public long  berechneAlleSteuer() {
-		return berechneBuergernsteuer()+berechneSchurkensteuer()+berechneOrganisationsteuer();
-		}
-
-
-	public static void setBuerger(Buerger peasant) {
-		Finanzamt.buergern.add(peasant);
-	}
-	public static List<Buerger> getAlleBuerger() {
-		return buergern;
-	}
-
-	public static void setSchurken(Schurke schurke) {
-		Finanzamt.schurken.add(schurke);
-	}
-	public static List<Schurke> getAlleSchurken() {
-		return schurken;
-	}
-
-	public static void setOrganisation(Organisation organisation) {
-		Finanzamt.organisationen.add(organisation);
-	}
-	public static List<Organisation> getAlleOrganisation() {
-		return organisationen;
-	}
-
+   
 }

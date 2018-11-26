@@ -50,10 +50,10 @@ public class Richter extends Mensch{
 		}
 	}*/
 
-	@Override
-	public void steuernzahlen() {
-		
-
-	}
+    @Override
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
 
 }

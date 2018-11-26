@@ -13,7 +13,6 @@ import exception.NegativeIncomeException;
  *
  */
 public abstract class Mutant extends Einwohner{
-	private static List<Mutant> mutanten = new ArrayList<Mutant>();
 	String mutation;
 	String[] superkraefte;
 
@@ -22,7 +21,6 @@ public abstract class Mutant extends Einwohner{
 		this.name = name;
 		this.einkommen = einkommen;
 		this.mutation = mutation;
-		Mutant.mutanten.add(this);
 	}
 
 	public abstract void setSuperkraft(String...superkraft);
@@ -32,9 +30,10 @@ public abstract class Mutant extends Einwohner{
 		return superkraefte;
 	}
 
-	public Mutant[] getAlleMutanten() {
-		Mutant[] alleMutanten = new Mutant[mutanten.size()];
-		alleMutanten = mutanten.toArray(alleMutanten);
-		return alleMutanten;
-	}
+    @Override
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
+
 }

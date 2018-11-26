@@ -19,4 +19,10 @@ public abstract class Mensch extends Einwohner {
 		this.alter = alter;
 		
 	}
+	
+    @Override
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
 }

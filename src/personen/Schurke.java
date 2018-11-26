@@ -17,13 +17,10 @@ import stadtverwaltung.Finanzamt;
 public class Schurke extends Mutant{
 	private boolean eingesperrt;
 	private boolean schuldig;
-	private static final List<Schurke> schurken = new ArrayList<>();
 
 	public Schurke(String name, double einkommen, String mutation, String superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
-		einkommensteuerpflichtig = true;
-		Schurke.schurken.add(this);
-		Finanzamt.setSchurken(this);
+
 		
 	}
 
@@ -46,12 +43,6 @@ public class Schurke extends Mutant{
         }
 	}
 
-	@Override
-	public void steuernzahlen() {
-		
-
-	}
-
 	public boolean isSchuldig() {
 		return schuldig;
 	}
@@ -67,4 +58,9 @@ public class Schurke extends Mutant{
 	public void setEingesperrt(boolean eingesperrt) {
 		this.eingesperrt = eingesperrt;
 	}
+
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
 }

@@ -14,29 +14,26 @@ import stadtverwaltung.*;
  * @author hoang
  *
  */
-public class Buerger extends Mensch {
-	private static final List<Buerger> buergern = new ArrayList<>();
+public class Buerger extends Mensch implements Einkommenssteuer {
 	private String name;
 
 	public Buerger(String nachname, String vorname, double einkommen, String jobs, int alter) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
-		einkommensteuerpflichtig = true;
-		Buerger.buergern.add(this);
-		Finanzamt.setBuerger(this);
+		Finanzamt.steuerpflichtige.add(this);
 	}
 
-	@Override
-	public void steuernzahlen() {
-		
-	}
+    @Override
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
+    
+    public String getName() {
+        return this.getName();
+    }
 
-//	public static List<Buerger> getAlleBuerger() {
-//		return buergern;
-//	}
-	public Buerger[] getAlleMutanten() {
-		Buerger[] alleBuergern = new Buerger[buergern.size()];
-		alleBuergern = buergern.toArray(alleBuergern);
-		return alleBuergern;
-	}
+
+
+
 
 }

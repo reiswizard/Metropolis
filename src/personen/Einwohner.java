@@ -9,7 +9,7 @@ import exception.NegativeIncomeException;
  * @author hoang
  *
  */
-public abstract class Einwohner extends stadtverwaltung.Einkommenhabende {
+public abstract class Einwohner{
 	public String name;
 	public String vorname;
 	public double einkommen;
@@ -17,19 +17,23 @@ public abstract class Einwohner extends stadtverwaltung.Einkommenhabende {
 	public Einwohner() { }
 
 	public Einwohner(String vorname, String name, double einkommen) throws NegativeIncomeException {
-		super(einkommen);
+		this.einkommen=einkommen;
 		this.name = name;
 		this.vorname =vorname;
 	}
 
 	public Einwohner(String name, double einkommen) throws NegativeIncomeException {
-		super(einkommen);
+		this.einkommen=einkommen;
 		this.name = name;
 		
 	}
 	
 	
 
+    public double getEinkommen() {
+        // TODO Auto-generated method stub
+        return this.einkommen;
+    }
 	public String getName() {
 		if (vorname!=null) {
 		return name+" "+vorname;
