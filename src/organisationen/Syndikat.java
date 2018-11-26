@@ -25,7 +25,7 @@ public class Syndikat extends Organisation{
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 
 	}
 

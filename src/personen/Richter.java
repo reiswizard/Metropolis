@@ -16,7 +16,7 @@ public class Richter extends Mensch{
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = false;
 		this.jobs = "Richter";
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter, boolean korrupt) {

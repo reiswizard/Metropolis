@@ -14,12 +14,12 @@ public class Superheld extends Mutant{
 
 	public Superheld(String name, double einkommen, String mutation, String...superkraft) {
 		super(name, einkommen, mutation, superkraft);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void setSuperkraft(String... superkraft) {
-		// TODO Auto-generated method stub
+		
 		this.superkraefte = superkraft;
 	}
 
@@ -37,7 +37,7 @@ public class Superheld extends Mutant{
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 
 	}
 

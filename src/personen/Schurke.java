@@ -23,13 +23,13 @@ public class Schurke extends Mutant{
 		einkommensteuerpflichtig = true;
 		Schurke.schurken.add(this);
 		Finanzamt.setSchurken(this);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	//Jedoch nur mit ein durch konstruktor
 	public void setSuperkraft(String...superkraft) {
-		// TODO Auto-generated method stub
+		
 		this.superkraefte = superkraft;
 	}
 

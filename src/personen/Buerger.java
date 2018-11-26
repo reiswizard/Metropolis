@@ -26,7 +26,7 @@ public class Buerger extends Mensch {
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 	}
 
 //	public static List<Buerger> getAlleBuerger() {

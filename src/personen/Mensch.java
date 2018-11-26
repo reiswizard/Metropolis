@@ -15,6 +15,6 @@ public abstract class Mensch extends Einwohner {
 		super(nachname, vorname, einkommen);
 		this.jobs = jobs;
 		this.alter = alter;
-		// TODO Auto-generated constructor stub
+		
 	}
 }

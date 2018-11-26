@@ -16,12 +16,12 @@ public class Kapitalgesellschaft extends Unternehmen{
 		super(name, gewinn);
 		this.gesellschafter = gesellschafter;
 		koerperschaftsteuerpflichtig = true;
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
