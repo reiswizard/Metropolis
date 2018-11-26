@@ -23,7 +23,7 @@ public class Richter extends Mensch{
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = korrupt;
 		this.jobs = "Richter";
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void verurteilen(Schurke gefangene) {
@@ -35,10 +35,21 @@ public class Richter extends Mensch{
 			gefangene.setEingesperrt(!korrupt);
 		}
 	}
+	//2ndary function, legacy code, kept for experimental purposes
+	/*
+	public void verutreilen2(Schurke angeklagter) {
+		if(korrupt) {
+			angeklagter.setEingesperrt(false);
+		}
+		else {
+			angeklagter.setEingesperrt(true);
+		
+		}
+	}*/
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 
 	}
 

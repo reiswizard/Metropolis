@@ -16,12 +16,12 @@ import stadtverwaltung.Finanzamt;
 public class Schurke extends Mutant{
 	private boolean eingesperrt;
 	private boolean schuldig;
-	private static final List<Schurke> schurkern = new ArrayList<>();
+	private static final List<Schurke> schurken = new ArrayList<>();
 
 	public Schurke(String name, double einkommen, String mutation, String superkraft) {
 		super(name, einkommen, mutation, superkraft);
 		einkommensteuerpflichtig = true;
-		Schurke.schurkern.add(this);
+		Schurke.schurken.add(this);
 		Finanzamt.setSchurken(this);
 		// TODO Auto-generated constructor stub
 	}
@@ -47,7 +47,7 @@ public class Schurke extends Mutant{
 
 	@Override
 	public void steuernzahlen() {
-		// TODO Auto-generated method stub
+		
 
 	}
 

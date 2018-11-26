@@ -17,7 +17,7 @@ import personen.Schurke;
  */
 public class Finanzamt {
 	private static List<Buerger> buergern = new ArrayList<Buerger>();
-	private static List<Schurke> schurkern = new ArrayList<Schurke>();
+	private static List<Schurke> schurken = new ArrayList<Schurke>();
 	private static List<Organisation> organisationen = new ArrayList<Organisation>();
 
 
@@ -49,8 +49,8 @@ public class Finanzamt {
 	}
 
 	public long berechneSchurkensteuer() {
-		Schurke[] alleSchurken = new Schurke[schurkern.size()];
-		alleSchurken = schurkern.toArray(alleSchurken);
+		Schurke[] alleSchurken = new Schurke[schurken.size()];
+		alleSchurken = schurken.toArray(alleSchurken);
 		return (long) (berechneSteuer(alleSchurken));
 	}
 
@@ -73,10 +73,10 @@ public class Finanzamt {
 	}
 
 	public static void setSchurken(Schurke schurke) {
-		Finanzamt.schurkern.add(schurke);
+		Finanzamt.schurken.add(schurke);
 	}
 	public static List<Schurke> getAlleSchurken() {
-		return schurkern;
+		return schurken;
 	}
 
 	public static void setOrganisation(Organisation organisation) {
