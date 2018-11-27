@@ -10,9 +10,9 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeExcept
  *
  */
 public abstract class Einwohner extends hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person {
-	public String name;
-	public String vorname;
-	public int einkommen;
+	public  String name;
+	public  String vorname;
+	public  int einkommen;
 
 	public Einwohner() { }
 
@@ -25,16 +25,16 @@ public abstract class Einwohner extends hsMannheim.pr2.ws2018.grp3.pflichtuebung
 	public Einwohner(String name, int einkommen) throws NegativeIncomeException {
 		super(einkommen);
 		this.name = name;
-		
+
 	}
-	
-	
+
+
 
 	public String getName() {
 		if (vorname!=null) {
 		return name+" "+vorname;
 		}
-		
+
 		else {
 			return name;
 		}

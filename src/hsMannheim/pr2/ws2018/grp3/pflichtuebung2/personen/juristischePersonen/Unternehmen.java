@@ -3,9 +3,6 @@
  */
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 
@@ -23,5 +20,6 @@ public abstract class Unternehmen extends Organisation implements Steuerzahler{
 		super(gewinn);
 		this.name = name;
 		this.gewinn = gewinn;
+
 	}
 }

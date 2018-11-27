@@ -32,7 +32,7 @@ public class Finanzamt {
                 einkommenssteuer = (person.getEinkommen() - 20000) * 0.25 + 2000;
             } else if (person.getEinkommen() <= 120000) {
                 einkommenssteuer = (person.getEinkommen() - 60000) * 0.35 + 12000;
-            } else if (person.getEinkommen() > 200000) {
+            } else if (person.getEinkommen() > 120000) {
                 einkommenssteuer = (person.getEinkommen() - 120000) * 0.5 + 33000;
             }
         }
@@ -117,6 +117,7 @@ public class Finanzamt {
 
     public static void setSteuerpflichtige(Person person) {
         Finanzamt.steuerpflichtige.add(person);
+
     }
 
     public static ArrayList<Person> getAlleSteuerpflichtigen() {

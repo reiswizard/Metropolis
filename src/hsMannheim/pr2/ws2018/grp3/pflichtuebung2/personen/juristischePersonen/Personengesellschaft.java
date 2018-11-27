@@ -5,7 +5,6 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
-import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 
 /**
@@ -19,13 +18,13 @@ public class Personengesellschaft extends Unternehmen{
 		super(name, gewinn);
 		this.inhaber = inhaber;
 		meldeAnFinanzamt();
-		
+
 	}
 
     @Override
     public void meldeAnFinanzamt() {
         Finanzamt.setSteuerpflichtige(this);
-        
+
     }
 
 

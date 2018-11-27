@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
+import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 
@@ -15,7 +16,7 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.st
  * @author hoang
  *
  */
-public class Schurke extends Mutant implements Steuerzahler{
+public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
 	private boolean eingesperrt;
 	private boolean schuldig;
 	private static final List<Schurke> schurken = new ArrayList<>();
@@ -23,13 +24,13 @@ public class Schurke extends Mutant implements Steuerzahler{
 	public Schurke(String name, int einkommen, String mutation, String superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
 		meldeAnFinanzamt();
-		
+
 	}
 
 	@Override
 	//Jedoch nur mit ein durch konstruktor
 	public void setSuperkraft(String...superkraft) {
-		
+
 		this.superkraefte = superkraft;
 	}
 
@@ -66,6 +67,21 @@ public class Schurke extends Mutant implements Steuerzahler{
     public void meldeAnFinanzamt() {
         Schurke.schurken.add(this);
         Finanzamt.setSteuerpflichtige(this);
-        
+
     }
+    @SuppressWarnings("unlikely-arg-type")
+	@Override
+	public void kaempfe(Mutant gladiator) {
+		if(gladiator instanceof Superheld) {
+			List<String> superkraefteliste = Arrays.asList(gladiator.getSuperkraefte());
+			// verloren
+			if(superkraefteliste.contains(this.getSuperkraefte())) {
+				this.setEingesperrt(true);
+	        } else {
+			// gewonnen
+	        	System.out.println("Schurke hat den Kampf gewonnen und macht sich triumphal davon");
+	        }
+		}
+		
+	}
 }

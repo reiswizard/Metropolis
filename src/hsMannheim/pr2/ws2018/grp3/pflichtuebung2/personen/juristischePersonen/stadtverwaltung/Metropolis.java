@@ -3,9 +3,10 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.s
  *
  */
 
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
+import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Kapitalgesellschaft;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Syndikat;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
@@ -16,8 +17,8 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Su
  * @author hoang
  *
  */
-public class Metropolis {
-    static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#0");
+public class Metropolis{
+//    static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#0");
 
 //  public Finanzamt finanzamt;
 //  public Einwohner[] einwohnern;
@@ -25,6 +26,33 @@ public class Metropolis {
 
     public Metropolis() {
     }
+
+    public static void printHeroes (ArrayList<Person> arrayList) {
+    	int array= arrayList.size();
+    	for (int i=0;i<array;i++) {
+    		if(arrayList.get(i) instanceof Superheld) {
+			System.out.println(arrayList.get(i).getName() );
+    		}
+    	}
+	}
+
+    public static void printSchurken (ArrayList<Person> arrayList) {
+    	int array= arrayList.size();
+    	for (int i=0;i<array;i++) {
+    		if(arrayList.get(i) instanceof Schurke) {
+			System.out.println(arrayList.get(i).getName() );
+    		}
+    	}
+	}
+
+    public static void printBuerger (ArrayList<Person> arrayList) {
+    	int array= arrayList.size();
+    	for (int i=0;i<array;i++) {
+    		if(arrayList.get(i) instanceof Buerger) {
+			System.out.println(arrayList.get(i).getName() );
+    		}
+    	}
+	}
 
 
     /**
@@ -44,6 +72,8 @@ try {
         Superheld hulk = new Superheld("Hulk", 20000, "krypton", "super");
         Superheld blackWidow = new Superheld("Black Widow", 180000, "krypton", "super");
         Superheld batman = new Superheld("Batman", 2500000, "krypton", "super");
+        printHeroes(Person.getAllPersons());
+        //System.out.println(superman);
 
 
 
@@ -53,23 +83,25 @@ try {
         Buerger phillippP = new Buerger("Poerkling", "Felix", 15000, "Pumper", 23);
         Buerger alexR = new Buerger("Remili", "Alexander", 10000, "Zuhälter", 38);
         Buerger mingP = new Buerger("Ling", "Ling", 17000, "Sovietspion", 26);
-        
+
         Schurke joker = new Schurke("Joker",80000, "joker", "superjoker");
         Schurke catWoman = new Schurke("Cat Woman", 150000, "joker", "supsdajoker");
 
         System.out.println(joker.getName());
         System.out.println(joker.getEinkommen());
+        System.out.println(elvisH.getEinkommen());
 
         Kapitalgesellschaft r3ich = new Kapitalgesellschaft("R3ICH", 10000, new Buerger[]{mingP, alexR});
-        Syndikat dasBoese = new Syndikat("Das Boerse", new Schurke[]{joker});
+        Syndikat dasBoese = new Syndikat("Das Boese", new Schurke[]{joker});
+        printSchurken(Person.getAllPersons());
+        printBuerger(Person.getAllPersons());
 
 
 
-        double steuer = finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(elvisH);
-        System.out.println("Buerger Elvis zahlt " + steuer + " Metro Dollar an Steuern");
+        System.out.println("Buerger Elvis zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(elvisH) + " Metro Dollar an Steuern");
 
         System.out.println("Schurke Joker zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(joker) + " Metro Dollar an Steuern");
-        System.out.println("Das Boerse zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(dasBoese) + " Metro Dollar an Steuern");
+        System.out.println("Das Boese zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(dasBoese) + " Metro Dollar an Steuern");
         System.out.println("Unternehmen R3ICH zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(r3ich) + " an Steuer");
         System.out.println("Die Stadt nehmt " + finanzamtMetropolis.berechneSteuerAllerBuerger() + " Metro Dollar an Steuern von Buerger ein");
         System.out.println("Die Stadt nehmt  " + finanzamtMetropolis.berechneGesamtsteuer() + " Metro Dollar insgesamt an Steuern ein");

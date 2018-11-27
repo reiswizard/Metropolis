@@ -3,9 +3,6 @@
  */
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
@@ -20,12 +17,13 @@ public class Buerger extends Mensch implements Steuerzahler {
 
 	public Buerger(String nachname, String vorname, int einkommen, String jobs, int alter) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
+
 		meldeAnFinanzamt();
 	}
 
 //	@Override
 //	public void steuernzahlen() {
-//		
+//
 //	}
 
 //	public static List<Buerger> getAlleBuerger() {
