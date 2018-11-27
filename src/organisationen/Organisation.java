@@ -2,15 +2,16 @@ package organisationen;
 
 import exception.NegativeIncomeException;
 import stadtverwaltung.Finanzamt;
+import stadtverwaltung.Steuerzahler;
 
-public abstract class Organisation extends stadtverwaltung.Einkommenhabende {
+public abstract class Organisation extends stadtverwaltung.Person{
 
 	public Organisation() { }
 
-	public Organisation(double einkommen) throws NegativeIncomeException {
+	public Organisation(int einkommen) throws NegativeIncomeException {
 		super(einkommen);
-		Finanzamt.setOrganisation(this);
 	}
 
-
+	
+	
 }

@@ -5,6 +5,8 @@ package organisationen;
 
 import exception.NegativeIncomeException;
 import personen.Buerger;
+import stadtverwaltung.Finanzamt;
+import stadtverwaltung.Steuerzahler;
 
 /**
  * @author hoang
@@ -13,16 +15,19 @@ import personen.Buerger;
 public class Personengesellschaft extends Unternehmen{
 	public Buerger[] inhaber;
 
-	public Personengesellschaft(String name, double gewinn, Buerger...inhaber) throws NegativeIncomeException {
+	public Personengesellschaft(String name, int gewinn, Buerger...inhaber) throws NegativeIncomeException {
 		super(name, gewinn);
 		this.inhaber = inhaber;
-		einkommensteuerpflichtig = true;
+		meldeAnFinanzamt();
 		
 	}
 
-	@Override
-	public void steuernzahlen() {
-		
-	}
+    @Override
+    public void meldeAnFinanzamt() {
+        Finanzamt.setSteuerpflichtige(this);
+        
+    }
+
+
 
 }

@@ -14,7 +14,7 @@ import exception.NegativeIncomeException;
  */
 public class Superheld extends Mutant{
 
-	public Superheld(String name, double einkommen, String mutation, String...superkraft) throws NegativeIncomeException {
+	public Superheld(String name, int einkommen, String mutation, String...superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
 		
 	}
@@ -37,11 +37,7 @@ public class Superheld extends Mutant{
         }
 	}
 
-	@Override
-	public void steuernzahlen() {
-		
 
-	}
 
 
 

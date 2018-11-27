@@ -9,21 +9,20 @@ import java.util.List;
 
 import exception.NegativeIncomeException;
 import stadtverwaltung.Finanzamt;
+import stadtverwaltung.Steuerzahler;
 
 /**
  * @author hoang
  *
  */
-public class Schurke extends Mutant{
+public class Schurke extends Mutant implements Steuerzahler{
 	private boolean eingesperrt;
 	private boolean schuldig;
 	private static final List<Schurke> schurken = new ArrayList<>();
 
-	public Schurke(String name, double einkommen, String mutation, String superkraft) throws NegativeIncomeException {
+	public Schurke(String name, int einkommen, String mutation, String superkraft) throws NegativeIncomeException {
 		super(name, einkommen, mutation, superkraft);
-		einkommensteuerpflichtig = true;
-		Schurke.schurken.add(this);
-		Finanzamt.setSchurken(this);
+		meldeAnFinanzamt();
 		
 	}
 
@@ -46,11 +45,6 @@ public class Schurke extends Mutant{
         }
 	}
 
-	@Override
-	public void steuernzahlen() {
-		
-
-	}
 
 	public boolean isSchuldig() {
 		return schuldig;
@@ -67,4 +61,11 @@ public class Schurke extends Mutant{
 	public void setEingesperrt(boolean eingesperrt) {
 		this.eingesperrt = eingesperrt;
 	}
+
+    @Override
+    public void meldeAnFinanzamt() {
+        Schurke.schurken.add(this);
+        Finanzamt.setSteuerpflichtige(this);
+        
+    }
 }

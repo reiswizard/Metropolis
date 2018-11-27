@@ -7,23 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import exception.NegativeIncomeException;
+import stadtverwaltung.Steuerzahler;
 
 /**
  * @author hoang
  *
  */
-public abstract class Unternehmen extends Organisation{
+public abstract class Unternehmen extends Organisation implements Steuerzahler{
 	public String name;
-	public double gewinn;
-	private static final List<Unternehmen> unternehmern = new ArrayList<>();
+	public int gewinn;
 
 	public Unternehmen() { }
 
-	public Unternehmen(String name, double gewinn) throws NegativeIncomeException {
+	public Unternehmen(String name, int gewinn) throws NegativeIncomeException {
 		super(gewinn);
 		this.name = name;
 		this.gewinn = gewinn;
-		gewerbesteuerpflichtig = true;
-		Unternehmen.unternehmern.add(this);
 	}
 }

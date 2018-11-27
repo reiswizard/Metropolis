@@ -17,12 +17,11 @@ public abstract class Mutant extends Einwohner{
 	String mutation;
 	String[] superkraefte;
 
-	public Mutant(String name, double einkommen, String mutation, String...superkraft) throws NegativeIncomeException {
+	public Mutant(String name, int einkommen, String mutation, String...superkraft) throws NegativeIncomeException {
 		super(name, einkommen);
 		this.name = name;
 		this.einkommen = einkommen;
 		this.mutation = mutation;
-		Mutant.mutanten.add(this);
 	}
 
 	public abstract void setSuperkraft(String...superkraft);

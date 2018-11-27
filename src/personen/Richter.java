@@ -15,14 +15,14 @@ public class Richter extends Mensch{
 	 * @throws NegativeIncomeException 
 	 *
 	 */
-	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter) throws NegativeIncomeException {
+	public Richter(String nachname, String vorname, int einkommen, String jobs, int alter) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = false;
 		this.jobs = "Richter";
 		
 	}
 
-	public Richter(String nachname, String vorname, double einkommen, String jobs, int alter, boolean korrupt) throws NegativeIncomeException {
+	public Richter(String nachname, String vorname, int einkommen, String jobs, int alter, boolean korrupt) throws NegativeIncomeException {
 		super(nachname, vorname, einkommen, jobs, alter);
 		this.korrupt = korrupt;
 		this.jobs = "Richter";
@@ -50,10 +50,5 @@ public class Richter extends Mensch{
 		}
 	}*/
 
-	@Override
-	public void steuernzahlen() {
-		
-
-	}
 
 }
