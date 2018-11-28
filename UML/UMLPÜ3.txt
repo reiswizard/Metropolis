@@ -3,57 +3,58 @@ skinparam classAttributeIconSize 0
 
 
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung{
-interface Steuerzahler{
-   + {static} meldeAnFinanzamt() : void
-}
-class Finanzamt {
-   - {static} steuerpflichtige: ArrayList<Person>
-   - {static} : ArrayList<Person>
-   + berechneEinkommenssteuer(Person): double
-   + berechneGewerbesteuer(Person) : double
-   + berechneKoerperschaftssteuer(Person) : double
-   + berechneGesamtsteuerFuerPersonen(Person...) : double
-   + berechneSteuerAllerBuerger() : double
-   + berechneSteuerAllerSchurken() : double
-   + berechneSteuerAllerOrganisationen() : double
-   + berechneGesamtsteuer() : double
-   + {static} setSteuerpflichtige(Person) : void
-   + {static} getAlleSteuerpflichtigen() : ArrayList<Person> 
-   + {static} getInstanz() : Finanzamt
-}
+	interface Steuerzahler{
+ 		 + {static} meldeAnFinanzamt() : void
+	}
+
+	class Finanzamt {
+   		- {static} steuerpflichtige : ArrayList<Person>
+   		- {static} : ArrayList<Person>
+   		+ berechneEinkommenssteuer(Person) : double
+   		+ berechneGewerbesteuer(Person) : double
+   		+ berechneKoerperschaftssteuer(Person) : double
+   		+ berechneGesamtsteuerFuerPersonen(Person...) : double
+  		+ berechneSteuerAllerBuerger() : double
+  		+ berechneSteuerAllerSchurken() : double
+  		+ berechneSteuerAllerOrganisationen() : double
+  		+ berechneGesamtsteuer() : double
+   		+ {static} setSteuerpflichtige(Person) : void
+  		+ {static} getAlleSteuerpflichtigen() : ArrayList<Person> 
+  		+ {static} getInstanz() : Finanzamt
+	}
 }
 
 
 
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen{
-class Kapitalgesellschaft{
-   - gesellschafter : Buerger[] 
-   + meldeAnFinanzamt() : void 
-   + setGesellschafter(Buerger...) : void
-   + getGesellschafter() : Buerger[]
-}
+	class Kapitalgesellschaft{
+   		- gesellschafter : Buerger[] 
+   		+ meldeAnFinanzamt() : void 
+   		+ setGesellschafter(Buerger...) : void
+   		+ getGesellschafter() : Buerger[]
+	}
 
-abstract class Organisation{
-   + getName() : String
-}
+	abstract class Organisation{
+   		+ getName() : String
+	}
 
-class Personengesellschaft{
-  - inhaber: Buerger[] 
-   + meldeAnFinanzamt() : void 
-   + setGesellschafter(Buerger...) : void
-   + getGesellschafter() : Buerger[]
-}
+	class Personengesellschaft{
+   		- inhaber: Buerger[] 
+   		+ meldeAnFinanzamt() : void 
+   		+ setGesellschafter(Buerger...) : void
+   		+ getGesellschafter() : Buerger[]
+	}
 
 
-abstract class Unternehmen{
-}
+	abstract class Unternehmen{
+	}
 
-class Syndikat{
-   - mitglieder : Schurke[] 
-   + setMitglieder(Schurke...) : void
-   + getMitglieder() : Schurke[]
-   +meldeAnFinanzamt() : void 
-}
+	class Syndikat{
+   		- mitglieder : Schurke[] 
+   		+ setMitglieder(Schurke...) : void
+   		+ getMitglieder() : Schurke[]
+   		+ meldeAnFinanzamt() : void 
+	}
 
 
 }
@@ -61,89 +62,85 @@ class Syndikat{
 
 
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen{
-class Person {
-   - einkommensteuerpflichtig : boolean
-   - boolean gewerbesteuerpflichtig : boolean
-   - koerperschaftssteuerpflichtig : boolean 
-   - einkommen : int
-   - name : String
-   + getEinkommen(): int
-   + setEinkommen(int) : void
-   + getPersonName(): String
-   + setPersonName(String) : void
-   + isEinkommenssteuerpflichtig() : boolean 
-   + isGewerbesteuerpflichtig() : boolean 
-   + isKoerperschaftsteuerpflichtig() : boolean 
-   + getName() : String 
-   + getEinkommensteuerpflichtig() : boolean 
-   + setEinkommensteuerpflichtig(boolean): void 
-}
+	class Person {
+   		- einkommensteuerpflichtig : boolean
+   		- boolean gewerbesteuerpflichtig : boolean
+   		- koerperschaftssteuerpflichtig : boolean 
+   		- einkommen : int
+   		- name : String
+   		+ getEinkommen(): int
+   		+ setEinkommen(int) : void
+   		+ getPersonName() : String
+   		+ setPersonName(String) : void
+   		+ isEinkommenssteuerpflichtig() : boolean 
+   		+ isGewerbesteuerpflichtig() : boolean 
+   		+ isKoerperschaftsteuerpflichtig() : boolean 
+   		+ getName() : String 
+   		+ getEinkommensteuerpflichtig() : boolean 
+   		+ setEinkommensteuerpflichtig(boolean) : void 
+	}
 }
 
 
 
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen{
-interface Kaempfer{
-    + {abstract}  kaempfe(Mutant) : void
-}
+	interface Kaempfer{
+    		+ {abstract}  kaempfe(Mutant) : void
+	}
 
 
-abstract class Mensch{
-  - job : String
-  - alter : int
-   + getJob(): String
-   + setJob(String) : void
-   + getAlter(): int
-   + setAlter(int) : void
-}
+	abstract class Mensch{
+   		- job : String
+   		- alter : int
+   		+ getJob(): String
+   		+ setJob(String) : void
+   		+ getAlter() : int
+   		+ setAlter(int) : void
+	}
 
 
-class Buerger{
-   +meldeAnFinanzamt() : void 
-}
+	class Buerger{
+   		+ meldeAnFinanzamt() : void 
+	}
 
 
-class Richter{
-   - korrupt : boolean
-   + verurteilen(Schurke) : void 
-   + isKorrupt(): boolean
-   + setKorrupt(boolean) : void
-}
+	class Richter{
+   		- korrupt : boolean
+   		+ verurteilen(Schurke) : void 
+   		+ isKorrupt() : boolean
+   		+ setKorrupt(boolean) : void
+	}
 
 
-abstract class Einwohner{
- - vorname: String
- + getName() : String 
-}
+	abstract class Einwohner{
+   		- vorname : String
+   		+ getName() : String 
+	}
 
-abstract class Mutant{
- # mutation: String
- # superkraefte: String[]
-  + {abstract} setSuperkraft() : void
-  + getSuperkraefte() : String[]
-}
+	abstract class Mutant{
+   		# mutation : String
+   		# superkraefte : String[]
+   		+ {abstract} setSuperkraft() : void
+   		+ getSuperkraefte() : String[]
+	}
 
-class Schurke{
- - eingesperrt: boolean
- - schuldig: boolean
-  + setSuperkraft(String...) : void
-  + meldeAnFinanzamt() : void
-  + kaempfe(Mutant) : void
- + isSchuldig() : void
- + isEingesperrt() : void
- + setSchuldig(boolean) : void
- + setEingesperrt(boolean) : void
-}
+	class Schurke{
+   		- eingesperrt : boolean
+   		- schuldig : boolean
+   		+ setSuperkraft(String...) : void
+   		+ meldeAnFinanzamt() : void
+   		+ kaempfe(Mutant) : void
+   		+ isSchuldig() : void
+   		+ isEingesperrt() : void
+   		+ setSchuldig(boolean) : void
+   		+ setEingesperrt(boolean) : void
+	}
 
-class Superheld{
-  + setSuperkraft(String...) : void
-  + kaempfe(Mutant) : void
+	class Superheld{
+  		+ setSuperkraft(String...) : void
+  		+ kaempfe(Mutant) : void
 
-}
-
-
-
-
+	}
 }
 
 Unternehmen<|-- Kapitalgesellschaft
