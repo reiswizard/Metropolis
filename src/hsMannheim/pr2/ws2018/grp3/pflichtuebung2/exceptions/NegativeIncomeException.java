@@ -2,19 +2,19 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions;
 
 public class NegativeIncomeException extends Exception {
 	
-	double income;
+	int income;
 	
 	
 	
 
 	
-	public NegativeIncomeException(String message, double einkommen) {
+	public NegativeIncomeException(String message, int einkommen) {
 		super(message);
 		this.income =einkommen;
 	}
 
 
-	public double getincome() {
+	public int getincome() {
 		
 		return income;
 		

@@ -1,8 +1,4 @@
-/**
- *
- */
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen;
-import java.util.ArrayList;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Kapitalgesellschaft;
@@ -11,31 +7,19 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Sy
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Unternehmen;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
-/**
- * @author hoang
- *
- */
+
 public abstract class Person {
-	protected boolean einkommensteuerpflichtig;
-	protected boolean gewerbesteuerpflichtig;
-	protected boolean koerperschaftssteuerpflichtig;
-	protected int einkommen;
-	public static ArrayList<Person> test = new ArrayList<Person>();
-	protected String name;
+    private boolean einkommensteuerpflichtig;
+    private boolean gewerbesteuerpflichtig;
+    private boolean koerperschaftssteuerpflichtig;
+    private int einkommen;
+    private String name;
 
-	public Person() { }
-
-
-	public Person(int einkommen)throws NegativeIncomeException {
-		setAllPersons(this);
-		if (einkommen <0)
-		{throw new NegativeIncomeException("Negatives Einkommen existiert nicht", einkommen);}
-
-		this.einkommen = einkommen;
-
-		if((this instanceof Buerger)||(this instanceof Personengesellschaft)||(this instanceof Schurke)) {
-		    this.setEinkommensteuerpflichtig(true);
-		}
+    protected Person(String name) {
+        this.name = name;
+        if ((this instanceof Buerger) || (this instanceof Personengesellschaft) || (this instanceof Schurke)) {
+            this.einkommensteuerpflichtig = true;
+        }
         if ((this instanceof Kapitalgesellschaft) || (this instanceof Syndikat)) {
             this.koerperschaftssteuerpflichtig = true;
         }
@@ -43,63 +27,46 @@ public abstract class Person {
             this.gewerbesteuerpflichtig = true;
         }
 
-	}
+    }
 
-	public int getEinkommen() {
-		return einkommen;
-	}
+    public Person(String name, int einkommen) throws NegativeIncomeException {
+        this(name);
+        if (einkommen < 0) {
+            throw new NegativeIncomeException("Negatives Einkommen existiert nicht", einkommen);
+        }
+        this.einkommen = einkommen;
+    }
 
-	//public abstract void steuernzahlen();
+    public int getEinkommen() {
+        return einkommen;
+    }
 
-	public boolean isEinkommenssteuerpflichtig() {
-		return this.getEinkommensteuerpflichtig();
-	}
+    public void setEinkommen(int einkommen) {
+        this.einkommen = einkommen;
+    }
 
-	public boolean isGewerbesteuerpflichtig() {
-	return this.gewerbesteuerpflichtig;
-	}
+    public String getPersonName() {
+        return name;
+    }
 
-	public boolean isKoerperschaftsteuerpflichtig() {
-	return this.koerperschaftssteuerpflichtig;
-	}
+    public void setPersonName(String name) {
+        this.name = name;
+    }
 
-	public void setAllPersons(Person person) {
-		 test.add(person);
+    public boolean isEinkommenssteuerpflichtig() {
+        return this.einkommensteuerpflichtig;
+    }
 
-	}
-	public static ArrayList<Person> getAllPersons() {
-		return test;
-	}
+    public boolean isGewerbesteuerpflichtig() {
+        return this.gewerbesteuerpflichtig;
+    }
 
-	public  String getName() {
-		return name;
-	}
+    public boolean isKoerperschaftsteuerpflichtig() {
+        return this.koerperschaftssteuerpflichtig;
+    }
 
-
-	public boolean getEinkommensteuerpflichtig() {
-		return einkommensteuerpflichtig;
-	}
-
-
-	public void setEinkommensteuerpflichtig(boolean einkommensteuerpflichtig) {
-		this.einkommensteuerpflichtig = einkommensteuerpflichtig;
-	}
-
-//	public int getEinkommensteuer(Person...steuerpflichtige) {
-//
-//		return 0;
-//	}
-//
-//	public int getGewerbesteuer() {
-//
-//		return 0;
-//	}
-//
-//	public int getKoerperschaftsteuer() {
-//
-//		return 0;
-//	}
-
-
+    public void setEinkommensteuerpflichtig(boolean einkommensteuerpflichtig) {
+        this.einkommensteuerpflichtig = einkommensteuerpflichtig;
+    }
 
 }

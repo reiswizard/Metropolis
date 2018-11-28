@@ -7,18 +7,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Or
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
 
-/**
- *
- */
-
-/**
- * @author Poerling, hoang
- *
- */
 public class Finanzamt {
     private static ArrayList<Person> steuerpflichtige = new ArrayList<Person>();
+    private static Finanzamt instanz = new Finanzamt();
 
-    public Finanzamt() {
+    private Finanzamt() {
     }
 
     public double berechneEinkommenssteuer(Person person) {
@@ -122,6 +115,10 @@ public class Finanzamt {
 
     public static ArrayList<Person> getAlleSteuerpflichtigen() {
         return steuerpflichtige;
+    }
+
+    public static Finanzamt getInstanz() {
+        return instanz;
     }
 
 }

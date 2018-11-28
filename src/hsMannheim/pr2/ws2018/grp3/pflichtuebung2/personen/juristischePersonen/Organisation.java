@@ -1,17 +1,18 @@
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
-import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
-import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 
-public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person{
+public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person {
 
-	public Organisation() { }
+    public Organisation(String name) {
+        super(name);
+    }
 
-	public Organisation(int einkommen) throws NegativeIncomeException {
-		super(einkommen);
-	}
+    public Organisation(String name, int einkommen) throws NegativeIncomeException {
+        super(name, einkommen);
+    }
 
-	
-	
+    public String getName() {
+        return this.getPersonName();
+    }
 }
