@@ -9,6 +9,7 @@ public abstract class Mutant extends Einwohner {
     public Mutant(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen);
         this.mutation = mutation;
+        this.superkraefte=superkraft;
     }
 
     

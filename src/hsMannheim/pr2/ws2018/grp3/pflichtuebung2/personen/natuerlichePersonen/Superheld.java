@@ -9,7 +9,6 @@ public class Superheld extends Mutant implements Kaempfer {
 
     public Superheld(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
-
     }
 
     @Override

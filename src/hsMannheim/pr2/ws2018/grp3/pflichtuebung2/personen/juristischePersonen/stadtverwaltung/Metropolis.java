@@ -48,7 +48,7 @@ public class Metropolis {
     public static void main(String[] args) {
         Finanzamt finanzamtMetropolis = Finanzamt.getInstanz();
         try {
-            Superheld superman = new Superheld("Superman", 50000, "krypton",new String[] { "superstark", "laseraugen", "unbesiegbar" });
+            Superheld superman = new Superheld("Superman", 50000, "krypton", "superstark", "laseraugen", "unbesiegbar");
             Superheld ironman = new Superheld("Iron Man", 60000, "krypton", "super");
             Superheld thor = new Superheld("Thor", 80000, "krypton", "super");
             Superheld loki = new Superheld("Loki", 60000, "krypton", "super");
@@ -94,8 +94,15 @@ public class Metropolis {
             System.out.println("___________________________________________________________-");
             Richter Richterin = new Richter("Rich", "Ter", 1300, 45);
             Richterin.verurteilen(joker);
+            
+            
             System.out.println(joker.isEingesperrt());
-
+            
+            joker.kaempfe(superman);
+           // superman.setSuperkraft("endlaser");
+            System.out.println(superman.getSuperkraefte()[0].toString());
+            System.out.println(superman.getSuperkraefte()[1].toString());
+            System.out.println(superman.getSuperkraefte()[2].toString());
         } catch (NegativeIncomeException e1) {
             System.err.println("Negatives Einkommen existiert nicht" + e1.getincome());
         }
