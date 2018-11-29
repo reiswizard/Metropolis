@@ -40,6 +40,10 @@ public abstract class Person {
     public int getEinkommen() {
         return einkommen;
     }
+    
+    public String getKlasse() {
+        return this.getClass().getSimpleName();
+    }
 
     public void setEinkommen(int einkommen) {
         this.einkommen = einkommen;
