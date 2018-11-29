@@ -8,8 +8,8 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.st
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 
 public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
-    private boolean eingesperrt;
-    private boolean schuldig;
+    private boolean eingesperrt=false;
+    private boolean schuldig=false;
 
     public Schurke(String name, int einkommen, String mutation, String superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
@@ -74,3 +74,4 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
         }
     }
 }
+

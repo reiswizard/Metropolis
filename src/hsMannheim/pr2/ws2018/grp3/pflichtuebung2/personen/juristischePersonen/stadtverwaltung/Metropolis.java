@@ -65,7 +65,7 @@ public class Metropolis {
             Buerger alexR = new Buerger("Remili", "Alexander", 10000, "Zuhälter", 38);
             Buerger mingP = new Buerger("Ling", "Ling", 17000, "Sovietspion", 26);
 
-            Schurke joker = new Schurke("Joker", 80000, "joker", "superjoker");
+            Schurke joker = new Schurke("Joker", 80000, "joker", "laseraugen");
             Schurke catWoman = new Schurke("Cat Woman", 150000, "joker", "supsdajoker");
     
             System.out.println(phillippP.getName());
@@ -74,14 +74,24 @@ public class Metropolis {
             System.out.println(elvisH.getEinkommen());
 
             Kapitalgesellschaft r3ich = new Kapitalgesellschaft("R3ICH", 10000, new Buerger[] { mingP, alexR });
-            Syndikat dasBoese = new Syndikat("Das Boese", new Schurke[] { joker });
+            Syndikat dasBoese = new Syndikat("Das Boese", new Schurke[] { joker,catWoman });
             System.out.println(dasBoese.getName());
 
             System.out.println("Buerger Elvis zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(elvisH)
                     + " Metro Dollar an Steuern");
+            System.out.println("Buerger Bernd zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(mingP)
+            + " Metro Dollar an Steuern");
+            System.out.println("Buerger Philipp zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(phillippP)
+            + " Metro Dollar an Steuern");
+            System.out.println("Buerger Ling zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(bernS)
+            + " Metro Dollar an Steuern");
+            System.out.println("Buerger Alex zahlt " + finanzamtMetropolis.berechneEinkommenssteuer(alexR)
+            + " Metro Dollar an Steuern");
 
             System.out.println("Schurke Joker zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(joker)
                     + " Metro Dollar an Steuern");
+            System.out.println("Schurke catWoman zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(catWoman)
+            + " Metro Dollar an Steuern");
             System.out.println("Das Boese zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(dasBoese)
                     + " Metro Dollar an Steuern");
             System.out.println("Unternehmen R3ICH zahlt " + finanzamtMetropolis.berechneGesamtsteuerFuerPersonen(r3ich)
@@ -95,10 +105,19 @@ public class Metropolis {
             Richter Richterin = new Richter("Rich", "Ter", 1300, 45);
             Richterin.verurteilen(joker);
             
+            superman.kaempfe(joker);
             
-            System.out.println(joker.isEingesperrt());
             
-            joker.kaempfe(superman);
+           System.out.println(joker.isEingesperrt());
+           joker.kaempfe(superman);
+           System.out.println(joker.isEingesperrt());
+           //System.out.println(joker.getSuperkraefte()[0].toString());
+            //joker.setSuperkraft("superstark");
+            //System.out.println(joker.getSuperkraefte()[0].toString());
+            
+          
+            
+            //joker.kaempfe(superman);
            // superman.setSuperkraft("endlaser");
             System.out.println(superman.getSuperkraefte()[0].toString());
             System.out.println(superman.getSuperkraefte()[1].toString());

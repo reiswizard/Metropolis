@@ -28,18 +28,40 @@ public class Superheld extends Mutant implements Kaempfer {
 
     @Override
     @SuppressWarnings("unlikely-arg-type")
-    public void kaempfe(Mutant gladiator) {
-        if (gladiator instanceof Schurke) {
-            List<String> superkraefteliste = Arrays.asList(superkraefte);
-            // gewonnen
-            if (superkraefteliste.contains(((Mutant) gladiator).getSuperkraefte())) {
-                ((Schurke) gladiator).setEingesperrt(true);
-            } else {
-                // verloren
-                System.out.println("Held wurde besiegt, Schurke ist entkommen.");
-            }
-
-        }
+      public void kaempfe(Mutant gladiator) {
+    	
+    	for(int j=0;j<this.getSuperkraefte().length;j++) {
+ 	
+    		for(int i=0;i<gladiator.getSuperkraefte().length;i++) {
+    				if(this.superkraefte[j].equals(gladiator.getSuperkraefte()))
+    					{((Schurke)gladiator).setEingesperrt(true);
+    					}
+    		}
+    		
+    	}
+           if(((Schurke)gladiator).isEingesperrt()==false)
+        	   // verloren
+            System.out.println("Held wurde besiegt, Schurke ist entkommen.");
+           else {
+        	   
+        	   System.out.println("Der Held gewinnt den Kampf und der Schurke wurde eingesperrt");
+           }
+        
+    	
+    	
+    	
+    	
+//        if (gladiator instanceof Schurke) {
+//            List<String> superkraefteliste = Arrays.asList(superkraefte);
+//            // gewonnen
+//            if (superkraefteliste.contains(gladiator.getSuperkraefte())) {
+//                ((Schurke) gladiator).setEingesperrt(false);
+//            } else {
+//                // verloren
+//                System.out.println("Held wurde besiegt, Schurke ist entkommen.");
+//            }
+//
+//        }
 
     }
 
