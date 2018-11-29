@@ -32,7 +32,7 @@ public abstract class Person {
     public Person(String name, int einkommen) throws NegativeIncomeException {
         this(name);
         if (einkommen < 0) {
-            throw new NegativeIncomeException("Negatives Einkommen existiert nicht", einkommen);
+            throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);
         }
         this.einkommen = einkommen;
     }
@@ -45,7 +45,11 @@ public abstract class Person {
         return this.getClass().getSimpleName();
     }
 
-    public void setEinkommen(int einkommen) {
+    public void setEinkommen(int einkommen) throws NegativeIncomeException {
+        if (einkommen < 0) {
+            throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);
+        }
+        else
         this.einkommen = einkommen;
     }
 
@@ -57,7 +61,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    public boolean isEinkommenssteuerpflichtig() {
+    public boolean isEinkommenssteuerpflichtig()  {
         return this.einkommensteuerpflichtig;
     }
 
