@@ -12,7 +12,7 @@ public class Finanzamt {
     private static ArrayList<Person> steuerpflichtige = new ArrayList<Person>();
     private static Finanzamt instanz = new Finanzamt();
 
-    public Finanzamt() {
+    private Finanzamt() {
     }
 
     public double berechneEinkommenssteuer(Person person) {

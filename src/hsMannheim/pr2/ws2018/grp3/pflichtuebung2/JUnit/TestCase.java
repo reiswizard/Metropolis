@@ -11,9 +11,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.st
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 class TestCase {
 TestCase()throws NegativeIncomeException{}
-	 Finanzamt dasAmt = new Finanzamt(); 
-		Buerger elvisH = new Buerger("Helblandt", "Elvis", 130000, "Beamter", 19);
-		 
+	  
+
+	Finanzamt dasAmt = Finanzamt.getInstanz();
+		
+	   Buerger elvisH = new Buerger("Helblandt", "Elvis", 130000, "Beamter", 19); 
 	     Buerger bernS = new Buerger("Scheibnel", "Beln", 20000, "Autist", 24);
 	     Buerger phillippP = new Buerger("Poerkling", "Felix", 15000, "Pumper", 23);
 	     Buerger alexR = new Buerger("Remili", "Alexander", 10000, "Zuhälter", 38);
