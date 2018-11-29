@@ -33,22 +33,30 @@ public class Superheld extends Mutant implements Kaempfer {
     	for(int j=0;j<this.getSuperkraefte().length;j++) {
  	
     		for(int i=0;i<gladiator.getSuperkraefte().length;i++) {
-    				if(this.superkraefte[j].equals(gladiator.getSuperkraefte()))
-    					{((Schurke)gladiator).setEingesperrt(true);
-    					}
+    				if(this.superkraefte[j].equals(gladiator.getSuperkraefte()[i])) {
+    					//System.out.println("selbe Kraft");
+    					((Schurke)gladiator).setEingesperrt(true);
+    				}
+    					
     		}
     		
-    	}
+    		
+			
+    			
+    		}
+			
+			
+    	
            if(((Schurke)gladiator).isEingesperrt()==false)
         	   // verloren
             System.out.println("Held wurde besiegt, Schurke ist entkommen.");
+           
            else {
         	   
         	   System.out.println("Der Held gewinnt den Kampf und der Schurke wurde eingesperrt");
            }
         
-    	
-    	
+           
     	
     	
 //        if (gladiator instanceof Schurke) {
@@ -64,5 +72,5 @@ public class Superheld extends Mutant implements Kaempfer {
 //        }
 
     }
-
 }
+

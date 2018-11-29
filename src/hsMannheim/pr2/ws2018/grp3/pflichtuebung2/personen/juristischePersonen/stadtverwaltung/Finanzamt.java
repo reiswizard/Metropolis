@@ -29,13 +29,13 @@ public class Finanzamt {
 				einkommenssteuer = (person.getEinkommen() - 120000) * 0.5 + 33000;
 			}
 		}
-		return (int) (Math.round(einkommenssteuer));
+		return ((int) einkommenssteuer);
 	}
 
 	public int berechneGewerbesteuer(Person person) {
 		double gewerbesteuer = 0;
 		if (!(person.isGewerbesteuerpflichtig())) {
-			return (int) (Math.round(gewerbesteuer));
+			return (int) ((gewerbesteuer));
 		} else {
 			gewerbesteuer = person.getEinkommen() * 0.1;
 			if ((person.isEinkommenssteuerpflichtig()) && gewerbesteuer >= 1000) {
@@ -47,7 +47,7 @@ public class Finanzamt {
 		}
 		;
 
-		return (int) (Math.round(gewerbesteuer));
+		return (int) ((gewerbesteuer));
 	}
 
 	public int berechneKoerperschaftssteuer(Person person) {
@@ -57,7 +57,7 @@ public class Finanzamt {
 		} else {
 			koerperschaftsteuer = person.getEinkommen() * 0.25;
 		}
-		return (int) (Math.round(koerperschaftsteuer));
+		return (int) ((koerperschaftsteuer));
 	}
 
 	public int berechneGesamtsteuerFuerPersonen(Person... personen) {
@@ -73,7 +73,7 @@ public class Finanzamt {
 		for (int i = 0; i < personen.length; i++) {
 			koerperschaftsteuer = koerperschaftsteuer + berechneKoerperschaftssteuer(personen[i]);
 		}
-		return (int) (Math.round(einkommenssteuer + Gewerbesteuer + koerperschaftsteuer));
+		return (int) ((einkommenssteuer + Gewerbesteuer + koerperschaftsteuer));
 	}
 
 	public int berechneSteuerAllerBuerger() {
@@ -84,7 +84,7 @@ public class Finanzamt {
 			}
 		}
 
-		return (int) (Math.round(steuer));
+		return (int) ((steuer));
 	}
 
 	public int berechneSteuerAllerSchurken() {
@@ -95,7 +95,7 @@ public class Finanzamt {
 			}
 		}
 
-		return (int) (Math.round(steuer));
+		return (int) ((steuer));
 	}
 
 	public int berechneSteuerAllerOrganisationen() {
@@ -106,7 +106,7 @@ public class Finanzamt {
 			}
 		}
 
-		return (int) (Math.round(steuer));
+		return (int) ((steuer));
 	}
 
 	public int berechneGesamtsteuer() {

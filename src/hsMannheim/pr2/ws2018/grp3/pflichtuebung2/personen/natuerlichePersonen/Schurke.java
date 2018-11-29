@@ -62,16 +62,44 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
     @SuppressWarnings("unlikely-arg-type")
     @Override
     public void kaempfe(Mutant gladiator) {
-        if (gladiator instanceof Superheld) {
-            List<String> superkraefteliste = Arrays.asList(gladiator.getSuperkraefte());
-            // verloren
-            if (superkraefteliste.contains(this.getSuperkraefte())) {
-                this.setEingesperrt(true);
-            } else {
-                // gewonnen
-                System.out.println("Schurke hat den Kampf gewonnen und macht sich triumphal davon");
-            }
-        }
+    	
+    	for(int j=0;j<gladiator.getSuperkraefte().length;j++) {
+    	 	
+    		for(int i=0;i<this.getSuperkraefte().length;i++) {
+    				if(gladiator.superkraefte[j].equals(this.getSuperkraefte()[i])) {
+    					//System.out.println("selbe Kraft");
+    					this.setEingesperrt(true);
+    				}
+    	
+    					
+    					
+    		}
+    		
+    	}
+    		
+    	 
+    			
+    		
+    	
+           if(this.isEingesperrt()==true)
+        	   // verloren
+            System.out.println("Der Held gewinnt den Kampf und der Schurke wurde eingesperrt");
+           else {
+        	   
+        	   System.out.println("Held wurde besiegt, Schurke ist entkommen");
+           }
+          
+    	
+    	//        if (gladiator instanceof Superheld) {
+//            List<String> superkraefteliste = Arrays.asList(gladiator.getSuperkraefte());
+//            // verloren
+//            if (superkraefteliste.contains(this.getSuperkraefte())) {
+//                this.setEingesperrt(true);
+//            } else {
+//                // gewonnen
+//                System.out.println("Schurke hat den Kampf gewonnen und macht sich triumphal davon");
+//            }
+//        }
     }
 }
 

@@ -49,7 +49,7 @@ public class Metropolis {
         Finanzamt finanzamtMetropolis = Finanzamt.getInstanz();
         try {
             Superheld superman = new Superheld("Superman", 50000, "krypton", "superstark", "laseraugen", "unbesiegbar");
-            Superheld ironman = new Superheld("Iron Man", 60000, "krypton", "super");
+            Superheld ironman = new Superheld("Iron Man", 60000, "krypton", "super","laser");
             Superheld thor = new Superheld("Thor", 80000, "krypton", "super");
             Superheld loki = new Superheld("Loki", 60000, "krypton", "super");
             Superheld spiderman = new Superheld("Spiderman", 30000, "krypton", "super");
@@ -102,15 +102,13 @@ public class Metropolis {
                     + " Metro Dollar insgesamt an Steuern ein");
 
             System.out.println("___________________________________________________________-");
-            Richter Richterin = new Richter("Rich", "Ter", 1300, 45);
-            Richterin.verurteilen(joker);
+           // Richter Richterin = new Richter("Rich", "Ter", 1300, 45);
             
-            superman.kaempfe(joker);
-            
-            
+            joker.kaempfe(ironman);
+            System.out.println(joker.isEingesperrt());
+            superman.kaempfe(joker);           
            System.out.println(joker.isEingesperrt());
-           joker.kaempfe(superman);
-           System.out.println(joker.isEingesperrt());
+            
            //System.out.println(joker.getSuperkraefte()[0].toString());
             //joker.setSuperkraft("superstark");
             //System.out.println(joker.getSuperkraefte()[0].toString());
