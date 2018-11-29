@@ -2,6 +2,7 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.s
 
 import java.util.ArrayList;
 
+
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Organisation;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
@@ -11,7 +12,7 @@ public class Finanzamt {
     private static ArrayList<Person> steuerpflichtige = new ArrayList<Person>();
     private static Finanzamt instanz = new Finanzamt();
 
-    private Finanzamt() {
+    public Finanzamt() {
     }
 
     public double berechneEinkommenssteuer(Person person) {
