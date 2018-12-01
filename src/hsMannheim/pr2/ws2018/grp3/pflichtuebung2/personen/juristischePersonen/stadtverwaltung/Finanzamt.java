@@ -6,7 +6,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Organisation;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
-
+/**
+ * 
+ * @author Herbrandt, Poerling, Phan
+ *
+ */
 public class Finanzamt {
     private static ArrayList<Person> steuerpflichtige = new ArrayList<Person>();
     private static Finanzamt instanz;
@@ -38,7 +42,11 @@ public class Finanzamt {
         }
         return ((int) einkommenssteuer);
     }
-
+/**
+ * 
+ * @param person die Person(juristisch oder natürlich) für die die Gewerbesteuer berechnet werden soll
+ * @return die errechnete Gewerbesteuer
+ */
     public int berechneGewerbesteuer(Person person) {
         double gewerbesteuer = 0;
         if (!(person.isGewerbesteuerpflichtig())) {
@@ -56,7 +64,11 @@ public class Finanzamt {
 
         return (int) ((gewerbesteuer));
     }
-
+    /**
+     * 
+     * @param person
+     * @return
+     */
     public int berechneKoerperschaftssteuer(Person person) {
         double koerperschaftsteuer = 0;
         if (!(person.isKoerperschaftsteuerpflichtig())) {
@@ -66,7 +78,11 @@ public class Finanzamt {
         }
         return (int) ((koerperschaftsteuer));
     }
-
+    /**
+     * 
+     * @param personen
+     * @return die errechnete Gesamtsteuer
+     */
     public int berechneGesamtsteuerFuerPersonen(Person... personen) {
         double einkommenssteuer = 0;
         for (int i = 0; i < personen.length; i++) {
@@ -82,7 +98,10 @@ public class Finanzamt {
         }
         return (int) ((einkommenssteuer + Gewerbesteuer + koerperschaftsteuer));
     }
-
+    /**
+     * 
+     * @return die Steuer aller Bürger
+     */
     public int berechneSteuerAllerBuerger() {
         double steuer = 0;
         for (int i = 0; i < steuerpflichtige.size(); i++) {
@@ -93,7 +112,10 @@ public class Finanzamt {
 
         return (int) ((steuer));
     }
-
+    /**
+     * 
+     * @return die Steuer aller Schurken
+     */
     public int berechneSteuerAllerSchurken() {
         double steuer = 0;
         for (int i = 0; i < steuerpflichtige.size(); i++) {
@@ -104,7 +126,10 @@ public class Finanzamt {
 
         return (int) ((steuer));
     }
-
+    /**
+     * 
+     * @return steuer aller Organisationen
+     */
     public int berechneSteuerAllerOrganisationen() {
         double steuer = 0;
         for (int i = 0; i < steuerpflichtige.size(); i++) {
@@ -115,27 +140,42 @@ public class Finanzamt {
 
         return (int) ((steuer));
     }
-
+    /**
+     * 
+     * @return die Gesamtsteuer
+     */
     public int berechneGesamtsteuer() {
         return berechneSteuerAllerBuerger() + berechneSteuerAllerSchurken() + berechneSteuerAllerOrganisationen();
     }
-
+/**
+ * 
+ * @param person
+ */
     public static void setSteuerpflichtige(Person person) {
         Finanzamt.steuerpflichtige.add(person);
 
     }
-
+    /**
+     * 
+     * @return alle Steuerpflichtigen
+     */
     public static ArrayList<Person> getAlleSteuerpflichtigen() {
         return steuerpflichtige;
     }
-
+/**
+ * 
+ * @return das Singletion Finanzamt
+ */
     public static Finanzamt getInstanz() {
         if (Finanzamt.instanz == null) {
             Finanzamt.instanz = new Finanzamt();
         }
         return instanz;
     }
-
+    /**
+     * 
+     * @param person
+     */
     public static void deleteSteuerpflichtige(Person person) {
         Finanzamt.steuerpflichtige.remove(person);
 

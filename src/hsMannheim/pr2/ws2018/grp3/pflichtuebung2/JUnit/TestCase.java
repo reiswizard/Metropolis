@@ -11,7 +11,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Bu
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Richter;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Superheld;
-
+/**
+ * 
+ * @author Herbrandt, Poerling, Phan
+ *
+ */
 class TestCase {
 	TestCase() throws NegativeIncomeException {
 	}
@@ -37,7 +41,9 @@ class TestCase {
 	Syndikat testSY = new Syndikat("Das Syndikat", joker, catWoWman);
 
 	
-
+	/**
+	 * Die Test Methode
+	 */
 	@Test
 	void testEinkommenssteuer() {
 		assertEquals(38000, dasAmt.berechneEinkommenssteuer(elvisH));
@@ -54,8 +60,12 @@ class TestCase {
 	
 
 	
-
-
+	
+	/**
+	 * 
+	 * @param args multiple Argumente
+	 * @throws NegativeIncomeException, die Exception für negatives Einkommen
+	 */
 	public static void main(String args[]) throws NegativeIncomeException {
 		TestCase myTest = new TestCase();
 		

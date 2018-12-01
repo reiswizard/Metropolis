@@ -3,19 +3,34 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen;
 import java.util.ArrayList;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
-
+/**
+ * 
+ * @author Herbrandt,Poerling,Phan
+ *
+ */
 public class Superheld extends Mutant implements Kaempfer {
-
+	/**
+	 * 
+	 * @param name
+	 * @param einkommen
+	 * @param mutation
+	 * @param superkraft
+	 * @throws NegativeIncomeException
+	 */
     public Superheld(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
     }
-
+    /**
+     * superkraft hinzufügen
+     */
     @Override
     public void setSuperkraft(String... superkraft) {
 
         this.superkraefte = superkraft;
     }
-
+    /**
+     *  Kampf zwischen Superheld und Schurke
+     */
     @Override
     @SuppressWarnings("unlikely-arg-type")
     public void kaempfe(Mutant gladiator) {

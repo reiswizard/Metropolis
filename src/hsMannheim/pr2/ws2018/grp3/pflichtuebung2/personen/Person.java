@@ -7,7 +7,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Sy
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.Unternehmen;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Buerger;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
-
+/**
+ * 
+ * @author Herbrandt, Poerling, Phan
+ *
+ */
 public abstract class Person {
     private boolean einkommensteuerpflichtig;
     private boolean gewerbesteuerpflichtig;
@@ -16,8 +20,12 @@ public abstract class Person {
     private String name;
 
     /*Konstruktor für Person
+     *
      * Weist Person jeweils ein dazugehöriges Atribut zu, wenn es Instanz einer bestimmten Klasse ist
+     *
+     * @param name, der Name der Instanz
      */
+    
     protected Person(String name) {
         this.name = name;
         if ((this instanceof Buerger) || (this instanceof Personengesellschaft) || (this instanceof Schurke)) {
@@ -31,7 +39,12 @@ public abstract class Person {
         }
 
     }
-
+	/**
+	 * 
+	 * @param name, der Name der Instanz
+	 * @param einkommen, das Einkommen
+	 * @throws NegativeIncomeException, die Exception für negatives Einkommen
+	 */
     public Person(String name, int einkommen) throws NegativeIncomeException {
         this(name);
         if (einkommen < 0) {
@@ -39,11 +52,17 @@ public abstract class Person {
         }
         this.einkommen = einkommen;
     }
-
+/**
+ * 
+ * @return einkommen
+ */
     public int getEinkommen() {
         return einkommen;
     }
-    
+    /**
+     * 
+     * @return class
+     */
     public String getKlasse() {
         return this.getClass().getSimpleName();
     }
@@ -61,27 +80,45 @@ public abstract class Person {
         else
         this.einkommen = einkommen;
     }
-
+    /**
+     * 
+     * @return name
+     */
     public String getPersonName() {
         return name;
     }
-
+    /**
+     * 
+     * @param name
+     */
     public void setPersonName(String name) {
         this.name = name;
     }
-
+    /**
+     * 
+     * @return boolean einkommenssteuerpflichtig
+     */
     public boolean isEinkommenssteuerpflichtig()  {
         return this.einkommensteuerpflichtig;
     }
-
+    /**
+     * 
+     * @return boolean gewerbesteuerpflichtig
+     */
     public boolean isGewerbesteuerpflichtig() {
         return this.gewerbesteuerpflichtig;
     }
-
+    /**
+     * 
+     * @return boolean koerperschaftssteuerpflichtig
+     */
     public boolean isKoerperschaftsteuerpflichtig() {
         return this.koerperschaftssteuerpflichtig;
     }
-
+    /**
+     * 
+     * @param einkommensteuerpflichtig
+     */
     public void setEinkommensteuerpflichtig(boolean einkommensteuerpflichtig) {
         this.einkommensteuerpflichtig = einkommensteuerpflichtig;
     }
