@@ -3,14 +3,16 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen;
 import java.util.ArrayList;
 
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
+
 /**
- * 
+ *
  * @author Herbrandt,Poerling,Phan
  *
  */
 public class Superheld extends Mutant implements Kaempfer {
+
 	/**
-	 * 
+	 *
 	 * @param name Name
 	 * @param einkommen Einkommen
 	 * @param mutation Mutation
@@ -20,6 +22,7 @@ public class Superheld extends Mutant implements Kaempfer {
     public Superheld(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
     }
+
     /**
      * superkraft hinzufügen
      */
@@ -28,6 +31,7 @@ public class Superheld extends Mutant implements Kaempfer {
 
         this.superkraefte = superkraft;
     }
+
     /**
      *  Kampf zwischen Superheld und Schurke
      */
@@ -46,7 +50,7 @@ public class Superheld extends Mutant implements Kaempfer {
                     ((Schurke) gladiator).setEingesperrt(true);
                     besiegt=true;
                     System.out.println("Schurke wurde besiegt.");
-                    
+
                 }
 
             }

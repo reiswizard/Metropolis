@@ -1,52 +1,81 @@
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen;
 
+import java.util.ArrayList;
+
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
+
 /**
- * 
- * @author elvis
+ *
+ * @author Pörling, Herbrandt, Phan
  *
  */
 public class Syndikat extends Organisation implements Steuerzahler {
+    //private Schurke[] mitglieder;
+    private ArrayList<Schurke> mitglieder = new ArrayList<Schurke>();
 
-    private Schurke[] mitglieder;
-	/**
-	 * 
-	 * @param name Name
-	 * @param mitglieder die Mitglieder
-	 * @throws NegativeIncomeException kein negatvies Einkommen
-	 */
-    public Syndikat(String name, Schurke... mitglieder) throws NegativeIncomeException {
+    public Syndikat(String name, Schurke... neuemitglieder) throws NegativeIncomeException {
         super(name);
-        this.mitglieder = mitglieder;
-        for (int i = 0; i < mitglieder.length; i++) {
-            // this.einkommen+=mitglieder[i].getEinkommen();
-            this.setEinkommen(getEinkommen() + mitglieder[i].getEinkommen());
+        for(int i = 0; i<neuemitglieder.length;i++) {
+        	this.mitglieder.add(neuemitglieder[i]);
+        }
+        //this.mitglieder = mitglieder;
 
+        //Einkommenberechnung für die Mitglieder
+        Schurke[] aktuellerMitglieger = new Schurke[mitglieder.size()];
+        aktuellerMitglieger = mitglieder.toArray(aktuellerMitglieger);
+        for (int i = 0; i < aktuellerMitglieger.length; i++) {
+            // this.einkommen+=mitglieder[i].getEinkommen();
+            this.setEinkommen(getEinkommen() + aktuellerMitglieger[i].getEinkommen());
         }
 
         meldeAnFinanzamt();
 
     }
+
     /**
-     * 
-     * @return mitglieder die Mitglieder
+     *
+     * @return Array der aktuellen Mitglieder des Syndikates
      */
     public Schurke[] getMitglieder() {
-        return mitglieder;
+    	Schurke[] aktuellerMitglieger = new Schurke[mitglieder.size()];
+        aktuellerMitglieger = mitglieder.toArray(aktuellerMitglieger);
+        return aktuellerMitglieger;
     }
+
     /**
-     * 
-     * @param mitglieder die Mitglieder
+     * Fügt neue Mitglieder zum Syndikat hinzu, falls diese noch nicht Mitglieds ist
+     * Das Einkommen der neuen Mitglieger wird zum Einkommen des Syndikates hinzugefügt
+     * @param neuemitglieder
+     * @throws NegativeIncomeException
      */
-    public void setMitglieder(Schurke... mitglieder) {
-        this.mitglieder = mitglieder;
+    public void setMitglieder(Schurke... neuemitglieder) throws NegativeIncomeException {
+        //this.mitglieder = mitglieder;
+        for(int i = 0; i<neuemitglieder.length;i++) {
+        	if (!mitglieder.contains(neuemitglieder[i])){
+        		this.mitglieder.add(neuemitglieder[i]);
+        		this.setEinkommen(getEinkommen() + neuemitglieder[i].getEinkommen());
+        	}
+        }
     }
-	 /**
-	  * Steuerpflichtige hinzufügen
-	  */
+
+    /**
+     * Entferne die übergebende Mitglieder aus dem Syndikat, falls diese Mitglieds sind,
+     * das Einkommen des entfernte Mitglied wird vom einkommen des Syndikates subtrahiert
+     * @param austretendeMitglieger
+     * @throws NegativeIncomeException
+     */
+    public void setMitgliederausgetreten(Schurke...austretendeMitglieger) throws NegativeIncomeException {
+    	for(int i = 0; i<austretendeMitglieger.length;i++) {
+    		if (mitglieder.contains(austretendeMitglieger[i])){
+    			this.mitglieder.remove(austretendeMitglieger[i]);
+        		this.setEinkommen(getEinkommen() - austretendeMitglieger[i].getEinkommen());
+        	}
+        }
+    }
+
     @Override
     public void meldeAnFinanzamt() {
         Finanzamt.setSteuerpflichtige(this);

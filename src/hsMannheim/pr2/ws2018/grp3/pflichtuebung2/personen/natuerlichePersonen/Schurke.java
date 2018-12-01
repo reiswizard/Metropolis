@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
+
 /**
- * 
+ *
  * @author Herbrandt.Poerling,Phan
  *
  */
@@ -20,6 +21,7 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
         meldeAnFinanzamt();
 
     }
+
     /**
      * setzt Superkräfte
      */
@@ -28,34 +30,39 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
 
         this.superkraefte = superkraft;
     }
+
     /**
-     * 
+     *
      * @return schuldig boolean
      */
     public boolean isSchuldig() {
         return schuldig;
     }
+
     /**
-     * 
+     *
      * @return eingesperrt boolean
      */
     public boolean isEingesperrt() {
         return eingesperrt;
     }
+
     /**
-     * 
+     *
      * @param schuldig boolean
      */
     public void setSchuldig(boolean schuldig) {
         this.schuldig = schuldig;
     }
+
     /**
-     * 
+     *
      * @param eingesperrt boolean
      */
     public void setEingesperrt(boolean eingesperrt) {
         this.eingesperrt = eingesperrt;
     }
+
     /**
      * fügt Steuerpflichtige hinzu
      */
@@ -64,6 +71,7 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
         Finanzamt.setSteuerpflichtige(this);
 
     }
+
     /**
      * kampf zwischen Schukre und Superheld
      */
@@ -90,9 +98,9 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
             }
         }
 
-        
+
     }
- // old solution
+    //old solution
     // public void kaempfe(Mutant gladiator) {
     //
     // for (int j = 0; j < gladiator.getSuperkraefte().length; j++) {
