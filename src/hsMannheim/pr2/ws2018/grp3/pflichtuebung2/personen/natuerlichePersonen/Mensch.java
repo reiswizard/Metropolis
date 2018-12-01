@@ -52,10 +52,10 @@ public abstract class Mensch extends Einwohner {
     }
 
     /**
-     *
+     *Alter ist nciht Änderbar
      * @param alter Alter
      */
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
+//    public void setAlter(int alter) {
+//        this.alter = alter;
+//    }
 }
