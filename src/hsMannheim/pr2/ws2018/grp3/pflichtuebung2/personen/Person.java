@@ -15,6 +15,9 @@ public abstract class Person {
     private int einkommen;
     private String name;
 
+    /*Konstruktor für Person
+     * Weist Person jeweils ein dazugehöriges Atribut zu, wenn es Instanz einer bestimmten Klasse ist
+     */
     protected Person(String name) {
         this.name = name;
         if ((this instanceof Buerger) || (this instanceof Personengesellschaft) || (this instanceof Schurke)) {
@@ -45,6 +48,12 @@ public abstract class Person {
         return this.getClass().getSimpleName();
     }
 
+    /**
+     * Setze Einkommen einer Person
+     *
+     * @author Pörling, Herbrandt, Phan
+     * @param int einkommen
+     */
     public void setEinkommen(int einkommen) throws NegativeIncomeException {
         if (einkommen < 0) {
             throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);

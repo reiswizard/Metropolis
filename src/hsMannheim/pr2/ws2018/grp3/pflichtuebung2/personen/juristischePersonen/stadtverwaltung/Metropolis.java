@@ -12,9 +12,16 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Me
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Richter;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Schurke;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Superheld;
-
+//Simulation der Stadt Metropolis
 public class Metropolis {
-
+    
+    /**
+     * Konstruktor
+     *
+     * @author Pörling, Herbrandt, Phan
+     * @param
+     * @return
+     */
     public Metropolis() {
     }
 

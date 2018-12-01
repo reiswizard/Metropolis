@@ -14,6 +14,13 @@ public class Finanzamt {
     private Finanzamt() {
     }
 
+    /**
+     * Berechne Einkommenssteuer für eine Person
+     *
+     * @author Pörling, Herbrandt, Phan
+     * @param Person person
+     * @return int einkommenssteuer
+     */
     public int berechneEinkommenssteuer(Person person) {
         double einkommenssteuer = 0;
         if (!(person.isEinkommenssteuerpflichtig())) {

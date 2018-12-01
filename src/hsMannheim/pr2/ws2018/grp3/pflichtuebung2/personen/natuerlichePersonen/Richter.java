@@ -30,6 +30,15 @@ public class Richter extends Mensch {
 
     }
 
+    /**
+     * Verurteile einen Schurken
+     * Wenn Richter korrupt ist, wird der Schurke freigelassen, ansonsten wird er
+     * immer schuldig gesprochen und bleibt frei
+     *
+     * @author Pörling, Herbrandt, Phan
+     * @param Schurke schurke
+     * @return
+     */
     public void verurteilen(Schurke gefangene) {
         if (korrupt) {
             gefangene.setSchuldig(!korrupt);
