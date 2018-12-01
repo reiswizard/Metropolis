@@ -12,10 +12,10 @@ public class Personengesellschaft extends Unternehmen {
     private Buerger[] inhaber;
     /**
      * 
-     * @param name
-     * @param gewinn
+     * @param name Name
+     * @param gewinn Gewinn
      * @param inhaber die Inhaber einer Personengesellschaft
-     * @throws NegativeIncomeException
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Personengesellschaft(String name, int gewinn, Buerger... inhaber) throws NegativeIncomeException {
         super(name, gewinn);
@@ -25,14 +25,14 @@ public class Personengesellschaft extends Unternehmen {
     }
     /**
      * 
-     * @return inhaber
+     * @return inhaber der Inhaber
      */
     public Buerger[] getInhaber() {
         return inhaber;
     }
     /**
      * 
-     * @param inhaber
+     * @param inhaber der Inhaber
      */
     public void setInhaber(Buerger... inhaber) {
         this.inhaber = inhaber;

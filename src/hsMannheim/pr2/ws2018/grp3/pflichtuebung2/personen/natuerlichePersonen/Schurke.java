@@ -30,28 +30,28 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
     }
     /**
      * 
-     * @return schuldig
+     * @return schuldig boolean
      */
     public boolean isSchuldig() {
         return schuldig;
     }
     /**
      * 
-     * @return eingesperrt
+     * @return eingesperrt boolean
      */
     public boolean isEingesperrt() {
         return eingesperrt;
     }
     /**
      * 
-     * @param schuldig
+     * @param schuldig boolean
      */
     public void setSchuldig(boolean schuldig) {
         this.schuldig = schuldig;
     }
     /**
      * 
-     * @param eingesperrt
+     * @param eingesperrt boolean
      */
     public void setEingesperrt(boolean eingesperrt) {
         this.eingesperrt = eingesperrt;

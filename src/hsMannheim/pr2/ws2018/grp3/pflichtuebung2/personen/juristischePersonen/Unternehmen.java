@@ -4,7 +4,7 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeExcept
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 /**
  * 
- * @author elvis
+ * @author Herbrandt,Poerling,Phan
  *
  */
 public abstract class Unternehmen extends Organisation implements Steuerzahler {

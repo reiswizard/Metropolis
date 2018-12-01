@@ -14,9 +14,9 @@ public class Syndikat extends Organisation implements Steuerzahler {
     private Schurke[] mitglieder;
 	/**
 	 * 
-	 * @param name
-	 * @param mitglieder
-	 * @throws NegativeIncomeException
+	 * @param name Name
+	 * @param mitglieder die Mitglieder
+	 * @throws NegativeIncomeException kein negatvies Einkommen
 	 */
     public Syndikat(String name, Schurke... mitglieder) throws NegativeIncomeException {
         super(name);
@@ -32,14 +32,14 @@ public class Syndikat extends Organisation implements Steuerzahler {
     }
     /**
      * 
-     * @return mitglieder
+     * @return mitglieder die Mitglieder
      */
     public Schurke[] getMitglieder() {
         return mitglieder;
     }
     /**
      * 
-     * @param mitglieder
+     * @param mitglieder die Mitglieder
      */
     public void setMitglieder(Schurke... mitglieder) {
         this.mitglieder = mitglieder;

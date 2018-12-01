@@ -64,7 +64,7 @@ class TestCase {
 	/**
 	 * 
 	 * @param args multiple Argumente
-	 * @throws NegativeIncomeException, die Exception für negatives Einkommen
+	 * @throws NegativeIncomeException die Exception für negatives Einkommen
 	 */
 	public static void main(String args[]) throws NegativeIncomeException {
 		TestCase myTest = new TestCase();

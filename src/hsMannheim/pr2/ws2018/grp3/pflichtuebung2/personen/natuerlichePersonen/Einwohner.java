@@ -10,10 +10,10 @@ public abstract class Einwohner extends hsMannheim.pr2.ws2018.grp3.pflichtuebung
     private String vorname;
 	/**
 	 * 
-	 * @param name
-	 * @param vorname
-	 * @param einkommen
-	 * @throws NegativeIncomeException
+	 * @param name Name
+	 * @param vorname Vorname
+	 * @param einkommen Einkommen
+	 * @throws NegativeIncomeException kein negatives Einkommen
 	 */
     public Einwohner(String name, String vorname, int einkommen) throws NegativeIncomeException {
         this(name, einkommen);
@@ -21,9 +21,9 @@ public abstract class Einwohner extends hsMannheim.pr2.ws2018.grp3.pflichtuebung
     }
     /**
      * 
-     * @param name
-     * @param einkommen
-     * @throws NegativeIncomeException
+     * @param name Name
+     * @param einkommen Einkommen
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Einwohner(String name, int einkommen) throws NegativeIncomeException {
         super(name, einkommen);

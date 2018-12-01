@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen"}]

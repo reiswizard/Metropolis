@@ -11,12 +11,12 @@ public abstract class Mensch extends Einwohner {
     private int alter;
     /**
      * 
-     * @param name
-     * @param vorname
-     * @param einkommen
-     * @param job
-     * @param alter
-     * @throws NegativeIncomeException
+     * @param name Name
+     * @param vorname Vorname
+     * @param einkommen Einkommen
+     * @param job Job
+     * @param alter Alter
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Mensch(String name, String vorname, int einkommen, String job, int alter) throws NegativeIncomeException {
         super(name, vorname, einkommen);
@@ -26,28 +26,28 @@ public abstract class Mensch extends Einwohner {
     }
     /**
      * 
-     * @return job
+     * @return job Job
      */
     public String getJob() {
         return job;
     }
     /**
      * 
-     * @param job
+     * @param job Job
      */
     public void setJob(String job) {
         this.job = job;
     }
     /**
      * 
-     * @return alter
+     * @return alter Alter
      */
     public int getAlter() {
         return alter;
     }
     /**
      * 
-     * @param alter
+     * @param alter Alter
      */
     public void setAlter(int alter) {
         this.alter = alter;

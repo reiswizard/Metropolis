@@ -17,14 +17,14 @@ public class Richter extends Mensch {
     }
     /**
      * 
-     * @param korrupt
+     * @param korrupt Korruption
      */
     public void setKorrupt(boolean korrupt) {
         this.korrupt = korrupt;
     }
 
     /**
-     * @throws NegativeIncomeException
+     * @throws NegativeIncomeException kein negatives Einkommen
      *
      */
     public Richter(String name, String vorname, int einkommen, int alter) throws NegativeIncomeException {
@@ -34,12 +34,12 @@ public class Richter extends Mensch {
     }
     /**
      * 
-     * @param name
-     * @param vorname
-     * @param einkommen
-     * @param alter
-     * @param korrupt
-     * @throws NegativeIncomeException
+     * @param name Name
+     * @param vorname Vorname
+     * @param einkommen Einkommen
+     * @param alter Alter
+     * @param korrupt Korruption
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Richter(String name, String vorname, int einkommen, int alter, boolean korrupt)
             throws NegativeIncomeException {
@@ -55,7 +55,7 @@ public class Richter extends Mensch {
      *
      * @author Pörling, Herbrandt, Phan
      * @param Schurke schurke
-     * @return
+     * @return void kein return wert
      */
     public void verurteilen(Schurke gefangene) {
         if (korrupt) {

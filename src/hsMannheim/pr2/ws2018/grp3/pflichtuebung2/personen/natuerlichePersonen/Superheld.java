@@ -11,11 +11,11 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeExcept
 public class Superheld extends Mutant implements Kaempfer {
 	/**
 	 * 
-	 * @param name
-	 * @param einkommen
-	 * @param mutation
-	 * @param superkraft
-	 * @throws NegativeIncomeException
+	 * @param name Name
+	 * @param einkommen Einkommen
+	 * @param mutation Mutation
+	 * @param superkraft Superkräfte
+	 * @throws NegativeIncomeException kein negatives Einkommen
 	 */
     public Superheld(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);

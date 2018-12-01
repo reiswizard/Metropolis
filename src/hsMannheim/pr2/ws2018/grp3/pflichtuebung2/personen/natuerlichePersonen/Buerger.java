@@ -11,12 +11,12 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.st
 public class Buerger extends Mensch implements Steuerzahler {
 	/**
 	 * 
-	 * @param name
-	 * @param vorname
-	 * @param einkommen
-	 * @param jobs
-	 * @param alter
-	 * @throws NegativeIncomeException
+	 * @param name Name
+	 * @param vorname Vorname
+	 * @param einkommen Einkommen
+	 * @param jobs Job
+	 * @param alter Alter
+	 * @throws NegativeIncomeException kein negatives Einkommen
 	 */
     public Buerger(String name, String vorname, int einkommen, String jobs, int alter)
             throws NegativeIncomeException {

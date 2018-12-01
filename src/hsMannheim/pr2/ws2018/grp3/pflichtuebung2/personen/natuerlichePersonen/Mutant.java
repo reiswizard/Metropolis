@@ -11,11 +11,11 @@ public abstract class Mutant extends Einwohner {
     protected String[] superkraefte;
     /**
      * 
-     * @param name
-     * @param einkommen
-     * @param mutation
-     * @param superkraft
-     * @throws NegativeIncomeException
+     * @param name Name
+     * @param einkommen Einkommen
+     * @param mutation Mutation
+     * @param superkraft Superkraft
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Mutant(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen);
@@ -25,7 +25,7 @@ public abstract class Mutant extends Einwohner {
 
     /**
      * 
-     * @param superkraft
+     * @param superkraft Superkräfte
      */
     public abstract void setSuperkraft(String... superkraft);
 

@@ -23,7 +23,7 @@ public abstract class Person {
      *
      * Weist Person jeweils ein dazugehöriges Atribut zu, wenn es Instanz einer bestimmten Klasse ist
      *
-     * @param name, der Name der Instanz
+     * @param name der Name der Instanz
      */
     
     protected Person(String name) {
@@ -41,9 +41,9 @@ public abstract class Person {
     }
 	/**
 	 * 
-	 * @param name, der Name der Instanz
-	 * @param einkommen, das Einkommen
-	 * @throws NegativeIncomeException, die Exception für negatives Einkommen
+	 * @param name der Name der Instanz
+	 * @param einkommen das Einkommen
+	 * @throws NegativeIncomeException die Exception für negatives Einkommen
 	 */
     public Person(String name, int einkommen) throws NegativeIncomeException {
         this(name);
@@ -54,14 +54,14 @@ public abstract class Person {
     }
 /**
  * 
- * @return einkommen
+ * @return einkommen Einkommen
  */
     public int getEinkommen() {
         return einkommen;
     }
     /**
      * 
-     * @return class
+     * @return class Klasse
      */
     public String getKlasse() {
         return this.getClass().getSimpleName();
@@ -71,7 +71,7 @@ public abstract class Person {
      * Setze Einkommen einer Person
      *
      * @author Pörling, Herbrandt, Phan
-     * @param int einkommen
+     * @param int einkommen Einkommen
      */
     public void setEinkommen(int einkommen) throws NegativeIncomeException {
         if (einkommen < 0) {
@@ -82,14 +82,14 @@ public abstract class Person {
     }
     /**
      * 
-     * @return name
+     * @return name Name
      */
     public String getPersonName() {
         return name;
     }
     /**
      * 
-     * @param name
+     * @param name Name
      */
     public void setPersonName(String name) {
         this.name = name;

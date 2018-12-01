@@ -3,7 +3,7 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeException;
 /**
  * 
- * @author elvis
+ * @author Herbrandt,Poerling,Phan
  *
  */
 public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person {
@@ -16,9 +16,9 @@ public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtueb
     }
     /**
      * 
-     * @param name
-     * @param einkommen
-     * @throws NegativeIncomeException
+     * @param name Name
+     * @param einkommen Einkommen
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public Organisation(String name, int einkommen) throws NegativeIncomeException {
         super(name, einkommen);
