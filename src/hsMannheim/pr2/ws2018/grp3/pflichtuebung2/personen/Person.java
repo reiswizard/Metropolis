@@ -19,7 +19,7 @@ public abstract class Person {
     private long einkommen;
     private String name;
 
-    /*Konstruktor für Person
+    /**Konstruktor für Person
      *
      * Weist Person jeweils ein dazugehöriges Atribut zu, wenn es Instanz einer bestimmten Klasse ist
      *
@@ -70,12 +70,11 @@ public abstract class Person {
         return this.getClass().getSimpleName();
     }
 
-    /**
-     * Setze Einkommen einer Person
-     *
-     * @author Pörling, Herbrandt, Phan
-     * @param long einkommen Einkommen
-     */
+/**
+ * 
+ * @param einkommen Einkommen einer Person
+ * @throws NegativeIncomeException kein negatives Einkommen
+ */
     public void setEinkommen(long einkommen) throws NegativeIncomeException {
         if (einkommen < 0) {
             throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);
@@ -102,7 +101,7 @@ public abstract class Person {
 
     /**
      *
-     * @return boolean einkommenssteuerpflichtig
+     * @return einkommenssteuerpflichtig ob einkommenssteuerpflichtig oder nicht
      */
     public boolean isEinkommenssteuerpflichtig()  {
         return this.einkommensteuerpflichtig;
@@ -110,7 +109,7 @@ public abstract class Person {
 
     /**
      *
-     * @return boolean gewerbesteuerpflichtig
+     * @return gewerbesteuerpflichtig ob gewerbesteuerpflichtig oder nicht
      */
     public boolean isGewerbesteuerpflichtig() {
         return this.gewerbesteuerpflichtig;
@@ -118,16 +117,16 @@ public abstract class Person {
 
     /**
      *
-     * @return boolean koerperschaftssteuerpflichtig
+     * @return koerperschaftssteuerpflichtig ob koerperschaftssteuerpflichtig oder nicht
      */
     public boolean isKoerperschaftsteuerpflichtig() {
         return this.koerperschaftssteuerpflichtig;
     }
 
-    /**
-     *
-     * @param boolean einkommensteuerpflichtig
-     */
+/**
+ * 
+ * @param einkommensteuerpflichtig ob einkommensteuerpflichtig oder nicht
+ */
     public void setEinkommensteuerpflichtig(boolean einkommensteuerpflichtig) {
         this.einkommensteuerpflichtig = einkommensteuerpflichtig;
     }

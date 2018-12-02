@@ -24,9 +24,8 @@ public class Finanzamt {
     /**
      * Berechne Einkommenssteuer für eine Person
      *
-     * @author Pörling, Herbrandt, Phan
-     * @param Person person
-     * @return long einkommenssteuer
+     * @param person Person für die Einkommenssteuer berechner wird
+     * @return einkommenssteuer berechnete Einkommenssteuer
      */
     public long berechneEinkommenssteuer(Person person) {
         double einkommenssteuer = 0;
@@ -86,7 +85,7 @@ public class Finanzamt {
 
     /**
      *
-     * @param personen
+     * @param personen Personen für die die Gesamtsteuer berechnet wird
      * @return die errechnete Gesamtsteuer
      */
     public long berechneGesamtsteuerFuerPersonen(Person... personen) {

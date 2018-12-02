@@ -43,7 +43,7 @@ public class Kapitalgesellschaft extends Unternehmen {
 
     /**
      * FÜgt neue Gesellschafter zum Unternehmen hinzu, falls diese noch keine Gesellschafter des Unternehmen sind
-     * @param neuergesellschafter
+     * @param neuergesellschafter neu eingestellte Gesellschafter
      */
     public void setGesellschafter(Buerger... neuergesellschafter) {
     	for(int i = 0; i<neuergesellschafter.length;i++) {
@@ -56,8 +56,8 @@ public class Kapitalgesellschaft extends Unternehmen {
 
     /**
      * Entferne Gesellschafter aus dem Unternehmen, falls diese Gesellschafter des Unternehmen ist
-     * @param austretendegesellschafter
-     * @throws NegativeIncomeException
+     * @param austretendegesellschafter auszutretende Gesellschafter
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public void setInhaberausgetreten(Buerger...austretendegesellschafter) throws NegativeIncomeException {
     	for(int i = 0; i<austretendegesellschafter.length;i++) {

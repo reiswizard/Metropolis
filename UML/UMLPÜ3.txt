@@ -9,7 +9,6 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.s
 
 	class Finanzamt {
    		- {static} steuerpflichtige : ArrayList<Person>
-   		- {static} : ArrayList<Person>
    		+ berechneEinkommenssteuer(Person) : double
    		+ berechneGewerbesteuer(Person) : double
    		+ berechneKoerperschaftssteuer(Person) : double
@@ -28,10 +27,11 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.s
 
 package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen{
 	class Kapitalgesellschaft{
-   		- gesellschafter : Buerger[] 
+   		- gesellschafter : ArrayList<Person>
    		+ meldeAnFinanzamt() : void 
    		+ setGesellschafter(Buerger...) : void
    		+ getGesellschafter() : Buerger[]
+                + setInhaberausgetreten(Buerger...) : void
 	}
 
 	abstract class Organisation{
@@ -39,10 +39,11 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen{
 	}
 
 	class Personengesellschaft{
-   		- inhaber: Buerger[] 
+   		- inhaber: ArrayList<Person> 
    		+ meldeAnFinanzamt() : void 
    		+ setGesellschafter(Buerger...) : void
    		+ getGesellschafter() : Buerger[]
+                + setInhaberausgetreten(Buerger...) : void
 	}
 
 
@@ -50,10 +51,11 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen{
 	}
 
 	class Syndikat{
-   		- mitglieder : Schurke[] 
+   		- mitglieder: ArrayList<Person> 
    		+ setMitglieder(Schurke...) : void
    		+ getMitglieder() : Schurke[]
    		+ meldeAnFinanzamt() : void 
+                + setMitgliederausgetreten(Schurke...) : void
 	}
 
 
@@ -66,12 +68,13 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen{
    		- einkommensteuerpflichtig : boolean
    		- boolean gewerbesteuerpflichtig : boolean
    		- koerperschaftssteuerpflichtig : boolean 
-   		- einkommen : int
+   		- einkommen : long
    		- name : String
-   		+ getEinkommen(): int
-   		+ setEinkommen(int) : void
+   		+ getEinkommen(): long
+   		+ setEinkommen(long) : void
    		+ getPersonName() : String
    		+ setPersonName(String) : void
+                + getKlasse : String
    		+ isEinkommenssteuerpflichtig() : boolean 
    		+ isGewerbesteuerpflichtig() : boolean 
    		+ isKoerperschaftsteuerpflichtig() : boolean 
@@ -95,7 +98,6 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen{
    		+ getJob(): String
    		+ setJob(String) : void
    		+ getAlter() : int
-   		+ setAlter(int) : void
 	}
 
 

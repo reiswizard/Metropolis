@@ -14,7 +14,7 @@ public class NegativeIncomeException extends Exception {
 	/**
 	 *
 	 * @param message die Narchicht die ausgegeben wird, wenn die Exception geworfen wird
-	 * @param einkommen das Einkommen, falls dieses Negativ ist, wrid die Exception geworfen
+	 * @param einkommen das Einkommen, falls dieses Negativ ist, wird die Exception geworfen
 	 */
 	public NegativeIncomeException(String message, long einkommen) {
 		super(message);
