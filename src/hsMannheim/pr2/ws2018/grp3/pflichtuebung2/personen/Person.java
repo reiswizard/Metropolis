@@ -92,10 +92,10 @@ public abstract class Person {
         return name;
     }
 
-    /**
-     *
-     * @param name Name
-     */
+   /**
+    * 
+    * @param name Name
+    */
     public void setPersonName(String name) {
         this.name = name;
     }
@@ -126,7 +126,7 @@ public abstract class Person {
 
     /**
      *
-     * @param einkommensteuerpflichtig
+     * @param boolean einkommensteuerpflichtig
      */
     public void setEinkommensteuerpflichtig(boolean einkommensteuerpflichtig) {
         this.einkommensteuerpflichtig = einkommensteuerpflichtig;
