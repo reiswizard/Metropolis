@@ -19,7 +19,7 @@ public class Superheld extends Mutant implements Kaempfer {
 	 * @param superkraft Superkräfte
 	 * @throws NegativeIncomeException kein negatives Einkommen
 	 */
-    public Superheld(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
+    public Superheld(String name, long einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
     }
 
@@ -49,13 +49,13 @@ public class Superheld extends Mutant implements Kaempfer {
                 if (superkraefteliste.contains(this.getSuperkraefte()[j])) {
                     ((Schurke) gladiator).setEingesperrt(true);
                     besiegt=true;
-                    System.out.println("Schurke wurde besiegt.");
+                    System.out.println(gladiator.getName() + " wurde besiegt.");
 
                 }
 
             }
             if(besiegt==false) {
-                System.out.println("Superheld wurde besiegt.");
+                System.out.println(this.getName() + " wurde besiegt. " + gladiator.getName() + " macht sich davon!");
             }
 
         }

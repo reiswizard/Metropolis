@@ -20,7 +20,7 @@ public abstract class Mensch extends Einwohner {
      * @param alter Alter
      * @throws NegativeIncomeException kein negatives Einkommen
      */
-    public Mensch(String name, String vorname, int einkommen, String job, int alter) throws NegativeIncomeException {
+    public Mensch(String name, String vorname, long einkommen, String job, int alter) throws NegativeIncomeException {
         super(name, vorname, einkommen);
         this.job = job;
         this.alter = alter;
@@ -47,7 +47,7 @@ public abstract class Mensch extends Einwohner {
      *
      * @return alter Alter
      */
-    public int getAlter() {
+    public long getAlter() {
         return alter;
     }
 

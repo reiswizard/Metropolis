@@ -19,7 +19,7 @@ public abstract class Mutant extends Einwohner {
      * @param superkraft Superkraft
      * @throws NegativeIncomeException kein negatives Einkommen
      */
-    public Mutant(String name, int einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
+    public Mutant(String name, long einkommen, String mutation, String... superkraft) throws NegativeIncomeException {
         super(name, einkommen);
         this.mutation = mutation;
         this.superkraefte=superkraft;

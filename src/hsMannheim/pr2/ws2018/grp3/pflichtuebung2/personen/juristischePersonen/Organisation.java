@@ -21,7 +21,7 @@ public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtueb
      * @param einkommen Einkommen
      * @throws NegativeIncomeException kein negatives Einkommen
      */
-    public Organisation(String name, int einkommen) throws NegativeIncomeException {
+    public Organisation(String name, long einkommen) throws NegativeIncomeException {
         super(name, einkommen);
     }
 

@@ -4,13 +4,13 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeExcept
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Finanzamt;
 import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.stadtverwaltung.Steuerzahler;
 /**
- * 
+ *
  * @author Herbrandt,Poerling,Phan
  *
  */
 public class Buerger extends Mensch implements Steuerzahler {
 	/**
-	 * 
+	 *
 	 * @param name Name
 	 * @param vorname Vorname
 	 * @param einkommen Einkommen
@@ -18,7 +18,7 @@ public class Buerger extends Mensch implements Steuerzahler {
 	 * @param alter Alter
 	 * @throws NegativeIncomeException kein negatives Einkommen
 	 */
-    public Buerger(String name, String vorname, int einkommen, String jobs, int alter)
+    public Buerger(String name, String vorname, long einkommen, String jobs, int alter)
             throws NegativeIncomeException {
         super(name, vorname, einkommen, jobs, alter);
 

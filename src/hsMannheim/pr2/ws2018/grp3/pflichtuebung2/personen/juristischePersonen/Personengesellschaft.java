@@ -14,7 +14,7 @@ public class Personengesellschaft extends Unternehmen {
     //private Buerger[] inhaber;
     private ArrayList<Buerger> inhaber = new ArrayList<Buerger>();
 
-    public Personengesellschaft(String name, int gewinn, Buerger... neuerinhaber) throws NegativeIncomeException {
+    public Personengesellschaft(String name, long gewinn, Buerger... neuerinhaber) throws NegativeIncomeException {
         super(name, gewinn);
         for(int i = 0; i<neuerinhaber.length;i++) {
         	this.inhaber.add(neuerinhaber[i]);

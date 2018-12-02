@@ -6,7 +6,7 @@ package hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions;
  */
 public class NegativeIncomeException extends Exception {
 
-	int income;
+	long income;
 
 
 
@@ -16,7 +16,7 @@ public class NegativeIncomeException extends Exception {
 	 * @param message die Narchicht die ausgegeben wird, wenn die Exception geworfen wird
 	 * @param einkommen das Einkommen, falls dieses Negativ ist, wrid die Exception geworfen
 	 */
-	public NegativeIncomeException(String message, int einkommen) {
+	public NegativeIncomeException(String message, long einkommen) {
 		super(message);
 		this.income =einkommen;
 	}
@@ -25,7 +25,7 @@ public class NegativeIncomeException extends Exception {
 	 *
 	 * @return Einkommen
 	 */
-	public int getincome() {
+	public long getincome() {
 
 		return income;
 

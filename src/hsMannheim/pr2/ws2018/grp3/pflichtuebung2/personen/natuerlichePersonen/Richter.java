@@ -29,7 +29,7 @@ public class Richter extends Mensch {
      * @throws NegativeIncomeException kein negatives Einkommen
      *
      */
-    public Richter(String name, String vorname, int einkommen, int alter) throws NegativeIncomeException {
+    public Richter(String name, String vorname, long einkommen, int alter) throws NegativeIncomeException {
         super(name, vorname, einkommen, "Richter", alter);
         this.korrupt = false;
 
@@ -44,7 +44,7 @@ public class Richter extends Mensch {
      * @param korrupt Korruption
      * @throws NegativeIncomeException kein negatives Einkommen
      */
-    public Richter(String name, String vorname, int einkommen, int alter, boolean korrupt)
+    public Richter(String name, String vorname, long einkommen, int alter, boolean korrupt)
             throws NegativeIncomeException {
         this(name, vorname, einkommen, alter);
         this.korrupt = korrupt;
@@ -64,9 +64,11 @@ public class Richter extends Mensch {
         if (korrupt) {
             gefangene.setSchuldig(!korrupt);
             gefangene.setEingesperrt(!korrupt);
+            System.out.println(gefangene.getName() + " wurde freigesprochen.");
         } else {
             gefangene.setSchuldig(!korrupt);
             gefangene.setEingesperrt(!korrupt);
+            System.out.println(gefangene.getName() + " wurde schuldig gesprochen.");
         }
     }
     // 2ndary function, legacy code, kept for experimental purposes

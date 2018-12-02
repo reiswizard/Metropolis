@@ -15,7 +15,7 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
     private boolean eingesperrt = false;
     private boolean schuldig = false;
 
-    public Schurke(String name, int einkommen, String mutation, String superkraft) throws NegativeIncomeException {
+    public Schurke(String name, long einkommen, String mutation, String superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
         // this.setSuperkraft(superkraft);
         meldeAnFinanzamt();
@@ -89,12 +89,12 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
                 if (superkraefteliste.contains(this.getSuperkraefte()[j])) {
                     this.eingesperrt = true;
                     besiegt = true;
-                    System.out.println("Held hat den Kampf gewonnen!");
+                    System.out.println(gladiator.getName() + " hat den Kampf gewonnen! " + this.getName() + " wurde eingesperrt!");
                 }
 
             }
             if (besiegt == false) {
-                System.out.println("Schurke hat den Kampf gewonnen!");
+                System.out.println(this.getName() + " hat den Kampf gewonnen und macht sich davon!");
             }
         }
 

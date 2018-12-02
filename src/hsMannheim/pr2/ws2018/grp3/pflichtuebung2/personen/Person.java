@@ -16,7 +16,7 @@ public abstract class Person {
     private boolean einkommensteuerpflichtig;
     private boolean gewerbesteuerpflichtig;
     private boolean koerperschaftssteuerpflichtig;
-    private int einkommen;
+    private long einkommen;
     private String name;
 
     /*Konstruktor für Person
@@ -46,7 +46,7 @@ public abstract class Person {
 	 * @param einkommen das Einkommen
 	 * @throws NegativeIncomeException die Exception für negatives Einkommen
 	 */
-    public Person(String name, int einkommen) throws NegativeIncomeException {
+    public Person(String name, long einkommen) throws NegativeIncomeException {
         this(name);
         if (einkommen < 0) {
             throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);
@@ -58,7 +58,7 @@ public abstract class Person {
      *
      * @return einkommen Einkommen
      */
-    public int getEinkommen() {
+    public long getEinkommen() {
         return einkommen;
     }
 
@@ -74,9 +74,9 @@ public abstract class Person {
      * Setze Einkommen einer Person
      *
      * @author Pörling, Herbrandt, Phan
-     * @param int einkommen Einkommen
+     * @param long einkommen Einkommen
      */
-    public void setEinkommen(int einkommen) throws NegativeIncomeException {
+    public void setEinkommen(long einkommen) throws NegativeIncomeException {
         if (einkommen < 0) {
             throw new NegativeIncomeException("Negatives Einkommen existiert nicht ", einkommen);
         } else {

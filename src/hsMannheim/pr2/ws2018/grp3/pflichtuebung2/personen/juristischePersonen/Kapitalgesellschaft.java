@@ -15,7 +15,7 @@ public class Kapitalgesellschaft extends Unternehmen {
 	//private Buerger[] gesellschafter;
     private ArrayList<Buerger> gesellschafter = new ArrayList<Buerger>();
 
-    public Kapitalgesellschaft(String name, int gewinn, Buerger... neuergesellschafter) throws NegativeIncomeException {
+    public Kapitalgesellschaft(String name, long gewinn, Buerger... neuergesellschafter) throws NegativeIncomeException {
         super(name, gewinn);
         for(int i = 0; i<neuergesellschafter.length;i++) {
         	this.gesellschafter.add(neuergesellschafter[i]);
