@@ -14,7 +14,14 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen.st
 public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
     private boolean eingesperrt = false;
     private boolean schuldig = false;
-
+    /**
+     * 
+     * @param name Name
+     * @param einkommen Einkommen
+     * @param mutation Mutation
+     * @param superkraft Superkraft
+     * @throws NegativeIncomeException kein negatives Einkommen
+     */
     public Schurke(String name, long einkommen, String mutation, String superkraft) throws NegativeIncomeException {
         super(name, einkommen, mutation, superkraft);
         // this.setSuperkraft(superkraft);
@@ -22,9 +29,6 @@ public class Schurke extends Mutant implements Steuerzahler, Kaempfer {
 
     }
 
-    /**
-     * setzt Superkräfte
-     */
     @Override
     public void setSuperkraft(String... superkraft) {
 

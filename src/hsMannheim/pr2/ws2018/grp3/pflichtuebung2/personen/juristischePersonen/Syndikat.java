@@ -15,7 +15,12 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Sc
 public class Syndikat extends Organisation implements Steuerzahler {
     //private Schurke[] mitglieder;
     private ArrayList<Schurke> mitglieder = new ArrayList<Schurke>();
-
+    /**
+     * 
+     * @param name Name
+     * @param neuemitglieder neue Mitglieder
+     * @throws NegativeIncomeException kein negatives Einkommen
+     */
     public Syndikat(String name, Schurke... neuemitglieder) throws NegativeIncomeException {
         super(name);
         for(int i = 0; i<neuemitglieder.length;i++) {
@@ -37,7 +42,7 @@ public class Syndikat extends Organisation implements Steuerzahler {
 
     /**
      *
-     * @return Array der aktuellen Mitglieder des Syndikates
+     * @return Schurke[] mit allen Mitgliedern 
      */
     public Schurke[] getMitglieder() {
     	Schurke[] aktuellerMitglieger = new Schurke[mitglieder.size()];
@@ -48,8 +53,8 @@ public class Syndikat extends Organisation implements Steuerzahler {
     /**
      * Fügt neue Mitglieder zum Syndikat hinzu, falls diese noch nicht Mitglieds ist
      * Das Einkommen der neuen Mitglieger wird zum Einkommen des Syndikates hinzugefügt
-     * @param neuemitglieder
-     * @throws NegativeIncomeException
+     * @param neuemitglieder neue Mitglieder
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public void setMitglieder(Schurke... neuemitglieder) throws NegativeIncomeException {
         //this.mitglieder = mitglieder;
@@ -64,8 +69,8 @@ public class Syndikat extends Organisation implements Steuerzahler {
     /**
      * Entferne die übergebende Mitglieder aus dem Syndikat, falls diese Mitglieds sind,
      * das Einkommen des entfernte Mitglied wird vom einkommen des Syndikates subtrahiert
-     * @param austretendeMitglieger
-     * @throws NegativeIncomeException
+     * @param austretendeMitglieger Mitglieder die ausgetreten sind
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public void setMitgliederausgetreten(Schurke...austretendeMitglieger) throws NegativeIncomeException {
     	for(int i = 0; i<austretendeMitglieger.length;i++) {

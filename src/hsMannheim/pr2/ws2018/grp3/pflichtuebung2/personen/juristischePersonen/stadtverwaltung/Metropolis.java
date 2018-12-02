@@ -80,8 +80,8 @@ public class Metropolis {
             //Bürger
             Buerger elvisH = new Buerger("Helblandt", "Elvis", 10000, "Beamter", 19);
             Buerger bernS = new Buerger("Scheibnel", "Beln", 10000, "Autist", 24);
-            Buerger phillippP = new Buerger("Poerkling", "Felix", 10000, "Pumper", 23);
-            Buerger alexR = new Buerger("Remili", "Alexander", 10000, "Zuhälter", 38);
+            Buerger phillippP = new Buerger("Poelkling", "Felix", 10000, "Pumper", 23);
+            Buerger alexR = new Buerger("Lemili", "Alexandel", 10000, "Zuhälter", 38);
             Buerger mingP = new Buerger("Ling", "Ling", 10000, "Sovietspion", 26);
             Buerger alabaG = new Buerger("Alaba", "Gerhof", 10000, "Peasant", 19);
             Buerger fridaB = new Buerger("Frida", "Barbara", 10000, "Peasant", 20);
@@ -96,9 +96,9 @@ public class Metropolis {
             Buerger viviR = new Buerger("Vivien", "Royce", 10000, "Peasant", 19);
             Buerger harryP = new Buerger("Harry", "Potter", 10000, "Zauberer", 19);
             Buerger hermyG = new Buerger("Hermione", "Granger", 10000, "Hexe", 19);
-            Buerger percyJ = new Buerger("Percy", "Jackson", 10000, "Demigod", 19);
-            Buerger jRaynor = new Buerger("James", "Raynor", 10000, "Marschal", 30);
-            Buerger tFinlay = new Buerger("Tykes", "Finley", 10000, "Space-Marines", 25);
+            Buerger percyJ = new Buerger("Percy", "Jackson", 10000, "Semigod", 19);
+            Buerger jRaynor = new Buerger("James", "Raynor", 10000, "Marshal", 30);
+            Buerger tFinlay = new Buerger("Tychus", "Findlay", 10000, "Space-Marines", 25);
             Buerger sKarrigan = new Buerger("Sarah", "Karrigan", 10000, "Queen of Blades", 21);
             Buerger dTrump = new Buerger("Donald", "Trump", 10000, "Weltidiot", 60);
             Buerger dGuy = new Buerger("Doom", "Guy", 10000, "Doomguy", 666);

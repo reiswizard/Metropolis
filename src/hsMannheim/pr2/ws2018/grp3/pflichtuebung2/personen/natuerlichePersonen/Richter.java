@@ -26,8 +26,12 @@ public class Richter extends Mensch {
     }
 
     /**
+     * 
+     * @param name Name
+     * @param vorname Vorname
+     * @param einkommen Einkommen
+     * @param alter Alter
      * @throws NegativeIncomeException kein negatives Einkommen
-     *
      */
     public Richter(String name, String vorname, long einkommen, int alter) throws NegativeIncomeException {
         super(name, vorname, einkommen, "Richter", alter);

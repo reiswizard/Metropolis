@@ -14,7 +14,13 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen.Bu
 public class Kapitalgesellschaft extends Unternehmen {
 	//private Buerger[] gesellschafter;
     private ArrayList<Buerger> gesellschafter = new ArrayList<Buerger>();
-
+    /**
+     * 
+     * @param name Name
+     * @param gewinn Gewinn
+     * @param neuergesellschafter neuer Gesellschafter
+     * @throws NegativeIncomeException kein negatives Einkommen
+     */
     public Kapitalgesellschaft(String name, long gewinn, Buerger... neuergesellschafter) throws NegativeIncomeException {
         super(name, gewinn);
         for(int i = 0; i<neuergesellschafter.length;i++) {
@@ -27,7 +33,7 @@ public class Kapitalgesellschaft extends Unternehmen {
 
     /**
      *
-     * @return Ein Array mit aktuellen Gesellschafter der Kapitalgesellschaft
+     * @return Buerger[] mit allen Gesellschaftern
      */
     public Buerger[] getGesellschafter() {
     	Buerger[] aktuellerGesellschafter = new Buerger[gesellschafter.size()];

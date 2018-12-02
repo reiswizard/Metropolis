@@ -71,8 +71,8 @@ public class Finanzamt {
 
     /**
      *
-     * @param person
-     * @return
+     * @param person Person
+     * @return die Koerperschaftssteuer
      */
     public long berechneKoerperschaftssteuer(Person person) {
         double koerperschaftsteuer = 0;
@@ -153,7 +153,7 @@ public class Finanzamt {
 
     /**
      *
-     * @return Die Steuer aller Syndikate
+     * @return die Steuer aller Syndikate
      */
     public long berechneSteuerAllerSyndikate() {
         double steuer = 0;
@@ -168,7 +168,7 @@ public class Finanzamt {
 
     /**
      *
-     * @return Die Steuer aller Kapitalgesellschaft
+     * @return die Steuer aller Kapitalgesellschaft
      */
     public long berechneSteuerAllerKapitalgesellschaft() {
         double steuer = 0;
@@ -181,7 +181,10 @@ public class Finanzamt {
         return (long) ((steuer));
     }
 
-
+    /**
+     * 
+     * @return die Steuer aller Personengesellschaften
+     */
     public long berechneSteuerAllerPersonengesellschaft() {
         double steuer = 0;
         for (int i = 0; i < steuerpflichtige.size(); i++) {
@@ -218,7 +221,7 @@ public class Finanzamt {
 
 /**
  *
- * @param person
+ * @param person Person
  */
     public static void setSteuerpflichtige(Person person) {
         Finanzamt.steuerpflichtige.add(person);
@@ -245,7 +248,7 @@ public class Finanzamt {
 
     /**
      *
-     * @param person
+     * @param person Person
      */
     public static void deleteSteuerpflichtige(Person person) {
         Finanzamt.steuerpflichtige.remove(person);

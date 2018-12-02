@@ -26,7 +26,7 @@ public class Personengesellschaft extends Unternehmen {
 
     /**
      *
-     * @return Array mit allen aktuellen Inhaber der Personengesellschaft
+     * @return Buerger[] mit allen Inhabern
      */
     public Buerger[] getInhaber() {
     	Buerger[] aktuellerInhaber = new Buerger[inhaber.size()];

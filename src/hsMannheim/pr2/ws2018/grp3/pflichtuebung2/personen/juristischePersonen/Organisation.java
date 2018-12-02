@@ -9,7 +9,7 @@ import hsMannheim.pr2.ws2018.grp3.pflichtuebung2.exceptions.NegativeIncomeExcept
 public abstract class Organisation extends hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.Person {
 	/**
 	 *
-	 * @param name
+	 * @param name Name
 	 */
     public Organisation(String name) {
         super(name);
