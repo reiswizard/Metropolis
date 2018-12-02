@@ -36,7 +36,7 @@ public class Personengesellschaft extends Unternehmen {
 
     /**
      * fügt Inhaber neue Mitglieder hinzu, falls diese keine Inhaber des Unternehmen sind
-     * @param neuerinhaber
+     * @param neuerinhaber neuer Inhaber
      */
     public void setInhaber(Buerger...neuerinhaber) {
     	//inhaber.add(neuerinhaber);
@@ -50,8 +50,8 @@ public class Personengesellschaft extends Unternehmen {
 
     /**
      * Entferne Inhaber aus Inhaberliste, wenn diese ein Inhaber des Unternehmens ist
-     * @param austretendeinhaber
-     * @throws NegativeIncomeException
+     * @param austretendeinhaber ehemalige Inhaber
+     * @throws NegativeIncomeException kein negatives Einkommen
      */
     public void setInhaberausgetreten(Buerger...austretendeinhaber) throws NegativeIncomeException {
     	for(int i = 0; i<austretendeinhaber.length;i++) {

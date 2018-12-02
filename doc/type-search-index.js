@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.natuerlichePersonen","l":"Superheld"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"hsMannheim.pr2.ws2018.grp3.pflichtuebung2.personen.juristischePersonen","l":"Personengesellschaft"}]
